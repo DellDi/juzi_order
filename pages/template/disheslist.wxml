@@ -1,0 +1,18 @@
+ <template name="menu">
+                    <block wx:for="{{menu}}" id="{{item.id}}">
+                        <view class="list">
+                            <view class="list-left">
+                                <view class="list-left-center">
+                                    <image src="{{item.menu[0].menu_image1}}"></image>
+                                 </view>
+                                <view class="list-left-right">
+                                     <text class='foodname'>{{item.food_name}}</text>
+                                     <text class="texted">x{{item.food_num}}</text>
+                                 </view>
+                              </view>
+                            <view class="list-right">
+                                 <text>￥{{item.now_price}}</text>
+                             </view>
+                          </view>
+                      </block>
+ </template>

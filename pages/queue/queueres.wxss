@@ -1,0 +1,120 @@
+/* pages/queue/queueres.wxss */
+.container{
+  width: 88%;
+  height: 88%;
+  margin: 0;
+  padding:6% 6%;
+}
+.detail{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding:0;
+  background: linear-gradient(to top,#9be3f7, #e5f4fa); 
+  border-radius:5rpx; 
+}
+.detail-content{
+  width: 90%;
+  height: 84%;
+  margin: 0 auto;
+  padding:7% 5%;
+}
+/* 头部 */
+.content-circle{
+  width: 450rpx;
+  height: 430rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 15rpx auto;
+  padding-top:19rpx; 
+
+}
+.content-circle-text{
+  width: 385rpx;
+  height: 385rpx;
+  border-radius: 50%;
+  border: 15rpx solid #31c0ea;
+  text-align: center;
+  margin: 0 auto;
+}
+.content-circle-text{
+  font-size: 160rpx;
+  line-height: 370rpx;
+}
+
+/* 底部 */
+.content-footer{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.content-footer-left text{
+  display: flex;
+  justify-content: colunm;
+  font-size: 33rpx;
+  margin-top: 10rpx;
+}
+.list {
+  display: flex;
+  justify-content: row;
+}
+.list image{
+  width: 25rpx;
+  height: 23rpx;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  margin-left: -32rpx;
+} 
+.text-fotter {
+  display: flex;
+  justify-content: row;
+  
+}
+.text-fotter text{
+  font-size: 38rpx;
+  margin-top: 20rpx;
+}
+.text-fotter-text{
+  font-size: 45rpx;
+}
+.content-footer-right navigator{
+  padding: 3rpx 8rpx;
+  font-size: 30rpx;
+  margin-top: 110rpx;
+  
+}
+ .menu{
+   width: 130rpx;
+   height: 55rpx;
+   padding-left: 30rpx;
+   padding-top: 7rpx;
+ 
+ }
+ .detail-fotter-top{
+    margin-top:30rpx;
+    text-align: right;
+    font-size: 32rpx;
+    color: rgb(129, 125, 125); 
+ }
+.fotter{
+  width: 30%;
+  height: 80rpx;
+  background-color: #ff9934; 
+  text-align: center;
+  font-size: 35rpx;
+  color: #fff;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-top: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  border-radius: 5rpx;
+}
+.fotter image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 25rpx;
+} 

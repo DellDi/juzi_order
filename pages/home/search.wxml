@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<view class='container'>
+  <!--头部 -->
+  <form bindsubmit='searchSubmitFn'>
+    <view class='container-top'>
+      <view class='search'>
+        <image src="/img/home/secher.2.png"></image>
+        <input class='input' name='input' bindinput='bindkeyInput' placeholder='请输入菜品名称' value="{{inputval}}"></input>
+        <image src="/img/home/secher.1.png" bindtap='clearinput'></image>
+      </view>
+      <!-- <button formType='submit' class='sosuo' bindtap='setSearchStorage' >搜索</button> -->
+      <button formType='submit' class='sosuo'>搜索</button>
+    </view>
+  </form>
+  <view class='historycontent'>
+    <view class='title'>
+      <text>历史搜索</text>
+      <image src='/img/home/clear.png' class='deleteIcon' bindtap='historyDelFn'></image>
+    </view>
+    <view class='htrItemContent'>
+      <block wx:for="{{searchRecord}}" wx:key='{{item}}'>
+        <view class='htrItem'>{{item.value}}</view>
+      </block>
+      <!-- <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view> -->
+    </view>
+  </view>
+  <!--搜索推荐 -->
+  <view class='container-content'>
+    <block>
+      <view class="list" wx:for="{{food}}" id="{{item.id}}">
+        <view class="container-content-left">
+          <image src="{{item.menu_image1}}"></image>
+        </view>
+        <view class="container-content-right">
+          <view class="foodname"> {{item.food_name}}</view>
+          <view class="month">月售： {{item.sale_num}}</view>
+          <view class="fotter">
+            <view class="red">价格： ￥{{item.now_price}}</view>
+            <!-- <view class="month"> </view> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='body_view'>
+  <!-- <loading hidden='{{hidden}}' bindchange='loadingchange'>
+   加载中... 
+ </loading> -->
+</view>
+<modal title='小提示' confirm-text='知道啦' hidden='{{modalhidden}}' no-cancel='true' bindconfirm='hideModal'>请输入需要查询的菜品名称
+</modal>

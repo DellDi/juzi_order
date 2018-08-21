@@ -1,0 +1,28 @@
+<!--pages/cart/cart.wxml-->
+<view class="container">
+<view class="line"></view>
+    <view class="detail">
+        <block wx:for="{{invoice}}" >
+            <view class="box" bindtap='invoice' data-id="{{item.invoice_id}} "style="background-image: url('/img/my/invoice.3.png');background-size:100% 100%;">
+                 <view class="top">
+                     <text>{{item.company_name}}</text>
+                   </view>
+                 <view class="fotter">
+                      <text>税号：{{item.tax_num}}</text> 
+                   </view>
+               </view>
+          </block>
+          
+         <view class="content">
+        <view class="box one" style="background-image: url('/img/my/invoice.3.png');background-size:100% 100%;">
+            <navigator url="../my/invoiceinput">
+                <image src="/img/my/invoice.1.png"></image>
+              </navigator>
+             <view class="box-right">
+                  <text>添加发票抬头信息</text> 
+               </view>
+           </view>
+       </view>
+       </view>
+   
+   </view>

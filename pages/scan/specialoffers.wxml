@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="container-detail">
+    <!--头部-->
+          <view class="detail-top">
+              <view class="line">
+              </view>
+              <view class="top-center">
+                  <text>今日特惠</text>
+              </view>
+              <view class="line">
+              </view>
+          </view>
+     <!--中间-->
+        <view class="detail-center">
+         <!--菜单优惠-->
+              <view class="detail-content-top">
+                  <view class="detail-content-top-top">
+                      <image src="/img/scren/scren.5.png"></image>
+              
+                  </view>
+                  <view class="detail-content-top-right">
+                      <view class="center-text">菜单优惠</view>
+                      <text class="">餐后满1元就送满30减30优惠券</text>
+                  </view>
+              </view>
+              <view class="detail-content-top">
+                    <view class="detail-content-top-top">
+                        <image src="/img/scren/scren.4.png"></image>
+              
+                    </view>
+                    <view class="detail-content-top-right">
+                        <view class="center-text">营业时间</view>
+                        <text>8：30-22：00</text>
+                    </view>
+              </view>
+              <view class="detail-content-top">
+                    <view class="detail-content-top-top">
+                        <image src="/img/scren/scren.6.png"></image>
+              
+                    </view>
+                    <view class="detail-content-top-right">
+                        <view class="center-text">新用户餐立减10元</view>
+                    </view>
+              </view>
+        </view>
+    </view>     
+</view>

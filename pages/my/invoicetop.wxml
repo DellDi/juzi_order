@@ -1,0 +1,73 @@
+<view class="line"></view>
+<view class="containor">
+
+    <view class="containor-top"  style="background-image: url('/img/my/invoice.4.png');background-size:100% 100%;">
+        <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>公司名称</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.company_name}}</text>
+             </view>
+           </view>
+          <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>税号</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.tax_num}}</text>
+             </view>
+           </view>
+          <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>公司地址</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.company_address}}</text>
+             </view>
+           </view>
+          <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>电话号码</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.invoice_phone}}</text>
+             </view>
+           </view>
+          <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>开户银行</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.invoice_bank}}</text>
+             </view>
+           </view>
+          <view class="containor-top-list">
+            <view class="containor-top-list-left">
+                <text>银行账户</text>
+             </view>
+            <view class="containor-top-list-right">
+                <text>{{one_invoice.bank_account}}</text>
+             </view>
+           </view>    
+    </view>
+      <view class="containor-center"  >
+          <view class="containor-center-top">
+              <image src="{{one_invoice.qr_code}}"></image>
+           </view>
+            <view class="containor-center-fotter">
+               <image src="/img/my/invoice.2.png"></image>
+               <view class="center-right">
+                  <text>扫一扫图中二维码，获取发票抬头信息</text>
+                 </view>
+             </view> 
+          </view> 
+      <view class="containor-fotter">
+          <view class="one">
+             <button  class="one" bindtap="bingdelete" data-id="{{one_invoice.invoice_id}}">删除</button>
+            </view>
+          <view >
+              <button  bindtap="bingrequest" data-id="{{one_invoice.invoice_id}}">修改企业信息</button>
+            </view>
+        </view>
+ </view>

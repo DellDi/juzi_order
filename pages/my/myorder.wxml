@@ -1,0 +1,164 @@
+<view class="body">
+  <view class="nav bc_white">
+    <view class="{{selected?'red':'default'}}" bindtap="selected">
+         <text>进行中</text>
+        </view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">
+         <text>已完成</text>
+        </view>
+  </view>
+      <!--进行中 -->
+  <view class="{{selected?'show1':'hidden1'}}" wx:for="{{order[0]}}" wx:for-item="item">
+    <view class="detail">
+        <view class="ing">
+             <view class="contair-detail-list">
+                 <view  class="contair-detail-list-left">桔子餐饮({{item.shop_name}}店)</view>
+                 <view  class="contair-detail-list-right">{{item.order_table}}</view>
+              </view>
+             <view class="contair-detail-list">
+                  <text>订单编号：{{item.order_num}}</text>
+               </view>
+              <view class="contair-detail-list">
+                 <text>下单时间：{{item.order_time}}</text>
+                </view>
+              <view class="contair-detail-list">
+                    <text>已支付：</text>
+                    <text class="money">{{item.already_pay}}元</text>
+                    <!--<button class="world">进行中</button> -->
+               </view>
+          </view>  
+          <view class="line"></view>
+     <!--已点菜品可隐藏 -->
+      <view class="caipin">
+           <view class="caipin-left">
+                  <image src="/img/my/pointmenu.1.png"></image>
+               <text>已点菜品</text>
+             </view>
+           <view class="caipin-right">
+
+                 <button  class="" bindtap="onChangeShowState" data-index="{{index}}">菜品列表</button>
+              </view>
+         </view>
+         <view class="line"></view>
+            <view class='{{showView==index?"":"hidden"}}' >   
+                <view class="box">
+                    <block wx:for="{{item.order_detail}}"  wx:for-item="detail" id="{{item.id}}">
+                        <view class="list">
+                            <view class="list-left">
+                              <!--  <view class="list-left-left">
+                                     <image src="{{item.id}}"></image>
+                                 </view> -->
+                                <view class="list-left-center">
+                                    <image src="{{detail.menu_image1}}"></image>
+                                 </view>
+                                <view class="list-left-right">
+                                     <text>{{detail.food_name}}</text>
+                                 </view>
+                              </view>
+                            <view class="list-right">
+                                 <text>{{detail.food_price}}</text>
+                                 <text class="text">*{{detail.food_num}}</text>
+                             </view>
+                          </view>
+                       </block>
+                    </view>
+                <view class="line"></view>    
+              </view> 
+        <!--底部 -->
+        
+      <!-- <view class="ing">
+            <view class="contair-detail-list">
+                 <text>桔子餐饮（{{stor}}店）</text>
+              </view>
+         <view class="contair-detail-list">
+              <text>订单编号：{{data}}  {{time}}</text>
+           </view>
+         <view class="contair-detail-list">
+              <text>下单时间：{{data}}  {{time}}</text>
+            </view>
+         <view class="contair-detail-list">
+             <view class="list-left">
+                 <text>已支付：</text>
+                <text class="money">{{money}}元</text>
+               </view>
+           </view>
+       </view> -->
+      </view>    
+  </view>
+     <!--已完成 -->
+
+  <view class="{{selected1?'show1':'hidden1'}}" wx:for="{{order[1]}}" wx:for-item="item">
+       <view class="detail">
+        <view class="ing">
+             <view class="contair-detail-list">
+                 <view  class="contair-detail-list-left">桔子餐饮({{item.shop_name}}店)</view>
+                 <view  class="contair-detail-list-right">{{item.order_table}}</view>
+              </view>
+             <view class="contair-detail-list">
+                  <text>订单编号：{{item.order_num}}</text>
+               </view>
+              <view class="contair-detail-list">
+                 <text>下单时间：{{item.order_time}}</text>
+                </view>
+              <view class="contair-detail-list">
+                    <text>已支付：</text>
+                    <text class="money">{{item.already_pay}}元</text>
+                    <!--<button class="world">已完成</button> -->
+               </view>
+          </view> 
+       <view class="line"></view> 
+     <!--已点菜品可隐藏 -->
+      <view class="caipin">
+           <view class="caipin-left">
+                  <image src="/img/my/pointmenu.1.png"></image>
+               <text>已点菜品</text>
+             </view>
+           <view class="caipin-right">
+                 <button  class="" bindtap="onChangeShowState" data-index="{{index}}">菜品列表</button>
+              </view>
+         </view>
+         <view class="line"></view>
+            <view class='{{showView==index?"":"hidden"}}' style="border-bottom: 18rpx solid #e2e1e1; ">   
+                <view class="box">
+                    <block wx:for="{{item.order_detail}}" id="{{item.id}}"  wx:for-item="detail">
+                        <view class="list">
+                            <view class="list-left">
+                               <!-- <view class="list-left-left">
+                                     <image src="{{item.id}}"></image>
+                                 </view> -->
+                                <view class="list-left-center">
+                                    <image src="{{detail.menu_image1}}"></image>
+                                 </view>
+                                <view class="list-left-right">
+                                     <text>{{detail.food_name}}</text>
+                                 </view>
+                              </view>
+                            <view class="list-right">
+                                 <text>{{detail.food_price}}</text>
+                                 <text class="text">*{{detail.food_num}}</text>
+                             </view>
+                          </view>
+                       </block>
+                    </view>
+              </view> 
+        <!--底部 -->
+      <!-- <view class="ing">
+            <view class="contair-detail-list">
+                 <text>桔子餐饮（{{stor}}店）</text>
+              </view>
+         <view class="contair-detail-list">
+              <text>订单编号：{{data}}  {{time}}</text>
+           </view>
+         <view class="contair-detail-list">
+              <text>下单时间：{{data}}  {{time}}</text>
+            </view>
+         <view class="contair-detail-list">
+                <text>已支付：</text>
+                <text class="money">{{money}}元</text>
+              
+           </view> 
+       </view>-->
+      </view>    
+  </view>
+
+</view>

@@ -1,0 +1,79 @@
+<view class='container'>
+  <view class='VIPcardimg'>
+    <image src='/img/my/member.8.png'></image>
+  </view>
+  <view class='user-item-bottom'>
+    <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/my/member.4.png'></image>
+        <text>名称</text>
+      </view>
+      <view url="/pages/address/address">
+        <text>{{member_info.member_nickname}}</text>
+      </view>
+    </view>
+    <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/my/member.6.png'></image>
+        <text>店铺</text>
+      </view>
+      <view url="/pages/address/address">
+       <text>{{member_info.shop_name}}</text>
+      </view>
+    </view>
+    <!-- <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/saoma.jpg'></image>
+        <text>状态</text>
+      </view>
+      <view url="/pages/address/address">
+         <text>{{member_info.member_status}}</text>
+      </view>
+    </view>
+    <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/saoma.jpg'></image>
+        <text>信用</text>
+      </view>
+      <view url="/pages/address/address">   
+         <text>{{member_info.member_credit}}</text>
+      </view>
+    </view> -->
+    <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/my/member.1.png'></image>
+        <text>消费</text>
+      </view>
+      <view url="/pages/address/address">     
+        <text>{{member_info.all_money}}元</text>
+      </view>
+    </view>
+    <view wx:if="{{member_info.member_phone}}"class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/my/member.5.png'></image>
+        <text>手机号</text>
+      </view>
+      <view url="/pages/address/address">
+        <text>{{member_info.member_phone}}</text>
+      </view>
+    </view>
+     <view wx:else="" class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/my/member.5.png'></image>
+        <text>手机号</text>
+      </view>
+      <navigator url="./bindmobile">
+        <text class="nobind">未绑定</text>
+      </navigator>
+    </view>
+    <!-- <view class='user-item-xin'>
+      <view class='user-item'>
+        <image src='/img/saoma.jpg'></image>
+        <text>喜欢</text>
+      </view>
+      <view url="/pages/address/address">
+        <text>{{member_info.member_like}}</text>    
+      </view>
+    </view> -->
+  </view>
+</view>

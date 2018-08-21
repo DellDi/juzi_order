@@ -1,0 +1,68 @@
+/**index.wxss**/
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container-detail{
+  width: 100%;
+  height: 100%;
+}
+
+/**头部**/
+.detail-top{
+  width: 96%;
+  height: 110rpx;
+  padding: 0 2%;
+  background-color:#e36d4d; 
+  padding-top: 10rpx;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 1rpx 1rpx 15rpx 1rpx #5c5a5a;
+}
+.detail-top text{
+  font-size: 38rpx;
+  color: white;
+  font-weight: 590;
+  font-family: '黑体';
+  line-height: 110rpx;
+}
+.line{
+  width: 240rpx;
+  height: 4rpx;
+  background-color: #ece8e8;
+  margin-top:55rpx; 
+}
+
+
+/**中间**/
+
+.detail-content-top{
+  width: 68%;
+  height: 170rpx;
+  margin: 0 auto;
+  padding:0 20%;
+  padding-top: 60rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: row;
+  border-bottom: 2rpx solid #f1baab;
+}
+
+.detail-content-top image{
+  width: 38rpx;
+  height: 35rpx;
+  margin-right: 30rpx;
+
+}
+
+.detail-content-top-right text{
+  display: flex;
+  justify-content: clounm;
+  font-size: 30rpx; 
+  margin-top: 10rpx;
+}
+.center-text{
+   font-size: 36rpx;  
+}

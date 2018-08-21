@@ -1,0 +1,65 @@
+<!--pages/appointment/apponintdetail.wxml-->
+<view class="container">
+    <view class="container-detail">
+    <!--头部-->
+       <view class="detail-top">
+              <text>桔子餐饮（{{shop_name}}）</text>
+       </view>
+
+     <!--中间-->
+       <view class="detail-center">
+         <!--订单编号-->
+              <view class="detail-center-list">
+                  <view class="detail-content-left">
+                      <text>订单编号</text>
+                  </view>
+                  <view class="detail-content-right">
+                     <text>{{order_num}}</text>
+                  </view>
+              </view>
+         <!--下单时间-->
+              <view class="detail-center-list">
+                  <view class="detail-content-left">
+                      <text>下单时间</text>
+                  </view>
+                  <view class="detail-content-right">
+                     <text>{{order_time}}</text>
+                  </view>
+              </view>
+         <!--订单形式-->
+               <view class="detail-center-list">
+                  <view class="detail-content-left">
+                      <view class="left-text">订单形式</view>
+                        <view class="left-cricle">
+                           预 
+                        </view>
+                  </view>
+                  <view class="detail-content-right">
+                     <text>{{reservedate}}  </text>
+                  </view>
+               </view>
+              <!--取消订单，我已到店--> 
+              <view class="content-fotter">
+                  <view  class="content-fotter-button" data-appointid="{{id}}" bindtap='cancel_appoint'>
+                     <navigator url="../index/index">
+                         取消订单
+                     </navigator> 
+                  </view>
+                  <view class="content-fotter-button">
+                     <navigator url="../index/index">
+                        我已收到
+                     </navigator>
+                  </view>
+              </view> 
+             <!--底部-->
+
+              <view class="fotter">
+                  <navigator url="../index/index">
+                     <image src="http://mz.djmall.xmisp.cn/files/logo/20161208/148117972563.jpg"></image>
+                    <view class="fotter-text">立即点餐</view>
+                  </navigator> 
+              </view>
+         </view> 
+    </view>
+</view>
+

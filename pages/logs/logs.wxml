@@ -1,0 +1,2 @@
+<map id="myMap" style="width: 100%; height: {{view.Height}}px;" latitude="{{latitude}}" longitude="{{longitude}}"
+      markers="{{markers}}" show-location bindmarkertap="selectMarket" include-points="{{markers}}"></map>

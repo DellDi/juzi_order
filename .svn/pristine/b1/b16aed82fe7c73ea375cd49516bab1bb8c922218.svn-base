@@ -1,0 +1,90 @@
+<!--pages/shop/storedetails.wxml-->
+<view class="container">
+<!--轮播图-->
+
+  <view class="my-swiper" >
+    <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:400rpx;">  
+    <block wx:for="{{shopRes.lunbo}}" >
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+
+<!--餐厅介绍-->
+<view class="content">
+   <view class="content-detail">
+      <view class="content-detail-top">
+          <view class="content-detail-top-text">
+             <text>橘子餐饮</text>
+             <text>({{shopRes.shop_name}}店)</text>
+          </view>
+          <view class="content-detail-top-money">
+             <text class="money">￥</text>
+             <text>人均: {{shopRes.avg_spend}}元</text>
+          </view>      
+       </view>
+       <view class="content-detail-center">
+          <view class="list">
+             <text>简介：</text>
+             <text class="world">{{shopRes.shop_introduc}}</text>
+          </view>
+          <view class="list">
+             <text>营业时间：</text>
+             <text class="world">{{shopRes.start_time}}--{{shopRes.end_time}}</text>
+          </view>
+          <view class="list">
+             <text>餐位：</text>
+             <text class="world storeaddress" wx:for="{{shopRes.classes}}" wx:for-item="table">{{table.name}}{{table.num}}</text>
+          </view>
+          <view class="list">
+             <text>地址：</text>
+             <text class="world">{{shopRes.shop_addess}}</text>
+          </view>
+       </view>
+       <view class="content-detail-fotter">
+        <view class="content-detail-fotter-button" bindtap='bitphone'>
+           <image src="../../img/lbt2.png"></image>
+           <view class="adr">拨打电话</view>
+        </view>
+        <view class="content-detail-fotter-button">
+           <navigator url="../index/index">
+               <image src="../../img/lbt2.png" />
+               <view class="adr">查看定位</view>
+           </navigator>
+        </view>
+   </view>
+<!--优惠卷-->
+  <view class="coupon">
+    <view class="coupon-top">
+      <text>优惠劵</text>
+      <text class="coupon-top-text">更多优惠  >></text>
+    </view>
+    <view class="coupon-center">
+         <image  src="/pages/images/lbt2.jpg"></image>
+         <button class="coupon-button"  bindtap="bindcoupon">
+         </button>
+    </view>
+  </view>
+
+<!--优惠卷-->
+  <view class="content-detail-list">
+     <block wx:for="{{item}}" for-index="id">
+       <view class="detail-list">
+          <view class="detail-list-left">
+            <image  src="{{item.img}}"></image>
+            <view>{{item. title}}</view>
+          </view>
+          <view class="detail-list-right">
+            <text detail-list-right-text>{{item.text}}</text>
+            <text >  ></text>
+          </view>
+        </view>
+     </block>
+  </view>
+    </view>
+  </view>
+</view>
+

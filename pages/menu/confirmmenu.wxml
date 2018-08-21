@@ -1,0 +1,57 @@
+<!--pages/menu/confirmmenu.wxml-->
+<view class="container">
+ <view class="lin"></view>
+    <view class="contair-top">
+        <text>桔子餐饮（{{menudel.shop_name}}）</text>
+     </view>
+    <view class="line"></view>
+    <view class="contair-detail">
+        <view class="contair-detail-list">
+          <view class="top-image">
+              <image src="/img/my/firmorder.2.png"></image>
+           </view>
+           <text>订单编号：{{menudel.order_num}}</text>
+         </view>
+         <view class="contair-detail-list">
+           <view class="top-image">
+              <image src="/img/my/firmorder.1.png"></image>
+           </view>
+           <text>下单时间：{{menudel.order_time}}</text>
+         </view>
+     </view>
+    <view class="line"></view>
+    <view class="caipin">
+         <view class="caipin-left">
+             <view class="image">
+              <image src="/img/my/firmorder.3.png"></image>
+           </view>
+           <text>已点菜品</text>
+           </view>
+          <view class="caipin-right">
+            <button  class="hide{{showView?'show':''}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+  <!-- //？:即表示了一种选择关系 -->
+            <button class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+         </view>
+      </view>
+      <view class="line"></view>
+              <view class="hide{{showView?'show':''}}">  
+                <view class="box">
+                <import src='../template/disheslist'/>
+                  <template is="menu" data="{{menu}}" />
+                    </view>
+                    <view class="line"></view>
+                </view> 
+        <view class="contair-fotter">
+       <view  class="right-text {{menudel.remark_order==''?'hidden':''}}">
+             <text> 备注：{{menudel.remark_order}}</text>
+             </view>
+          <view class="contair-fotter-top">
+              <view>菜品小计：</view>
+              <view class="money" >{{menudel.food_price}}元</view>
+           </view>
+        </view>
+        <view class="contair-fotter-fotter-left" bindtap='submit' >
+               下一步
+           </view>
+  </view>
+

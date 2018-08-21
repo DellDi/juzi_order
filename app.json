@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/home/search",
+    "pages/menu/menu",
+    "pages/menu/paymentmenu",
+    "pages/menu/completedmenu",
+    "pages/menu/confirmmenu",
+    "pages/menu/menualready",
+    "pages/menu/menudetail",
+    "pages/menu/voucher",
+
+    
+    "pages/my/invoicetop",
+    "pages/my/invoice",
+    "pages/my/invoicemodify",
+    "pages/my/invoiceinput",
+    "pages/my/user",
+    "pages/my/phone",
+    "pages/my/myorder",
+    "pages/my/Membershipcard",
+    "pages/my/mycar",
+
+    
+    "pages/queue/queueres",
+    "pages/queue/getcode",
+    "pages/queue/queue",
+    "pages/appointment/appointment",
+    "pages/appointment/appointorder",
+    "pages/appointment/assignseat",
+    "pages/appointment/appointdetail",
+    "pages/shop/storedetails",
+    "pages/shop/switchcity",
+    "pages/shop/voucher",
+    "pages/shop/shop",
+    "pages/logs/logs",
+    "pages/scan/scan",
+    "pages/scan/specialoffers",
+    "pages/share/sharecar",
+    "pages/share/sheardetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "桔子点餐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ddd",
+    "selectedColor": "green",
+    "borderStyle": "white",
+    "backgroundColor": "#FF9934",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/img/home/home1.png",
+        "selectedIconPath": "/img/home/home1.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "iconPath": "/img/home/home2.png",
+        "selectedIconPath": "/img/home/home2.png"
+      },
+      {
+        "pagePath": "pages/my/user",
+        "text": "我的",
+        "iconPath": "/img/home/home3.png",
+        "selectedIconPath": "/img/home/home3.png"
+      }
+    ]
+  }
+}

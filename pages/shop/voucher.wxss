@@ -1,0 +1,123 @@
+/* pages/shop/voucher.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.tobe-top{
+  display: flex;
+  width:100%;
+  height: 100%;
+  border-bottom: 1px solid #ccc;
+  background: #F3F3F3;
+}
+.content{
+  border-radius:25rpx;
+  width: 85%;
+  height: 260rpx;
+  margin-bottom: 55rpx;
+  margin: 80rpx auto; 
+}
+
+.content-center{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 92%;
+  height: 200rpx;
+  padding: 0 4%;
+}
+.content-center-left{
+  margin-left: 40rpx;
+  width: 160rpx;
+  height: 100%;
+  font-size: 45rpx;
+  line-height: 250rpx;
+  color: white;
+
+}
+.content-center-right{
+  margin-top: 30rpx; 
+  text-align: center;
+  font-weight: bold;
+ } 
+.mon{
+  font-size: 100rpx;
+}
+.content-center-right-list{
+  width: 250rpx;
+  height: 35rpx; 
+  font-size: 24rpx;
+  color: white;
+  margin-right: 5rpx;
+}
+.style{
+    font-size: 35rpx;
+    margin-bottom: 10rpx;
+}
+.content-fotter {
+  width: 90%;
+  height: 60rpx;
+  padding: 0  4.5% 0 5.5%;
+  font-size: 27rpx;
+  line-height: 58rpx;
+  margin-bottom: 20rpx;
+}
+.use{
+  font-size: 25rpx;
+  margin-left: 90rpx;
+}
+
+.tobe-line{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  margin-right: 14rpx;
+}
+.tobe-line text{
+  margin-top: 40rpx;
+  font-size: 35rpx;
+  letter-spacing: 7rpx;
+}
+.money{
+  font-size: 35rpx;
+  color: #888;  
+}
+
+.subtotal{
+  display: flex;
+  justify-content: space-between;
+  padding:0 2.5%;
+  width: 95%;
+  height: 80rpx;
+  font-size: 36rpx;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+.total{
+   color: #F69C17; 
+}
+button{
+  width:50%;
+  height: 75rpx;
+  font-size: 35rpx;
+  background: #F69C17;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 300rpx;
+  font-weight: bold;
+}
+.phonenumber{
+  margin-top: 25rpx;
+  padding-left: 10rpx;
+  font-size: 40rpx;
+  background: #fff;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}

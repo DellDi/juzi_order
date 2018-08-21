@@ -1,0 +1,63 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="detail">
+    <!-- 头部 -->
+        <view class="detail-top">
+             <image src="/img/my/phone.4.png"></image>  
+             <text>为保障您的账户安全，请绑定本人的手机号</text>   
+           </view>
+      <form bindsubmit="formSubmit" bindreset="formReset">
+              <!-- 姓名 -->
+             <view class="section">
+                 <view class="section-left">
+                    <image src="/img/my/phone.1.png"></image> 
+                    <view >
+                        <text>真实姓名</text> 
+                      </view>   
+                   </view>     
+                   <view class="section-right ">
+                      <input placeholder='请输入您的真实姓名' bindinput="phoneInput"></input> 
+                     </view>
+               </view>
+
+              <!--手机号-->
+              <view class="section">
+                   <view class="section-left one">
+                        <image src="/img/my/phone.3.png"></image>  
+                        <text>手机号</text>   
+                       </view>     
+                   <view class="section-right">
+                        <input placeholder='请输入您的手机号' type="number" maxlength="11" bindinput="phoneInput" />
+                     </view>
+                </view> 
+                   <!--验证码-->
+              <view class="section-one">
+                  <view class="section-one-left">
+                      <view class="section-one-left-left two">
+                          <image src="/img/my/phone.2.png"></image> 
+                          <text>验证码</text>   
+                        </view>   
+                     <view class="section-one-left-right">
+                          <input placeholder="请输入验证码" type="number" maxlength="6" bindinput="addCode" />
+                         </view>
+                  </view>
+                  <view class="section-one-right">
+                        <button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}'>
+                        {{text}}</button>
+                    </view>
+                </view>
+                <!-- 底部 --> 
+            <view class="fotter">
+                 <button formType="submit">提交绑定</button>
+              </view>
+       </form>
+    </view>
+ </view>
+
+
+ 
+
+
+ 
+ 
+

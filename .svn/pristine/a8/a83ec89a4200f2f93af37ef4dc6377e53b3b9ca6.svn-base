@@ -1,0 +1,115 @@
+// pages/shop/storedetails.js
+//获取应用实例
+const app = getApp()
+var Util = require( '../../utils/util.js' );
+Page({
+  data: {
+    city: "",
+    today: {},
+    future: "",
+    imgUrls: [
+      "/pages/images/lbt2.jpg",
+      "/pages/images/lbt3.jpg",
+      "/pages/images/lbt4.jpg"
+    ],
+    indicatorDots: true, //是否显示面板指示点
+    autoplay: true, //是否自动切换
+    interval: 3000, //自动切换时间间隔,3s
+    duration: 1000, //	滑动动画时长1s
+    item: [
+      {
+        "img": "/pages/images/lbt2.jpg",
+        "title": "预约",
+        "text": "聚餐活动"
+
+
+      },
+      {
+        "img": "/pages/images/lbt2.jpg",
+        "title": "点餐",
+        "text": "大家都在线点餐"
+
+      },
+      {
+        "img": "/pages/images/lbt2.jpg",
+        "title": "排队",
+        "text": "排队预约，叫号提醒，即时查看"
+
+      }
+
+    ]
+  },
+  //事件处理函数
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
+  onLoad: function (options) {
+    var that=this;
+    that.data.storeid=options.id
+    that.get_one_store(options.id)
+    
+    
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  get_one_store:function(storeid){
+    var that = this;
+    wx: wx.request({
+      url: getApp().globalData.domain + 'Index/get_one_shop',
+      // method: 'GET',
+      data:  { shopid: storeid },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          shopRes: res.data.shopRes,
+        })
+
+
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  bitphone: function () {
+    wx.makePhoneCall({
+      phoneNumber: '1340000'
+    })
+  }
+})

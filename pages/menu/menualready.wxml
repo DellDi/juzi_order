@@ -1,0 +1,44 @@
+<!--pages/menu/menualready.wxml-->
+<view class="container">
+ <view class="lin"></view>
+   <view class="caipin">
+         <view class="caipin-left">
+             <view class="image">
+              <image src="/img/my/myorder.1.png"></image>
+           </view>
+           <text>已点菜品</text>
+           </view>
+          <view class="caipin-right">
+            <button  class="hide{{showView?'show':''}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+  <!-- //？:即表示了一种选择关系 -->
+            <button class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+         </view>
+      </view>
+       <view class="line"></view>
+              <view class="hide{{showView?'show':''}}" >   
+                <view class="box">
+   <import src='../template/disheslist'/>
+   <template is="menu" data="{{menu}}" />
+    </view>
+                     <view class="line"></view>
+                </view> 
+      <view class="contair-fotter">
+          <view class="contair-fotter-top">
+                <text>备注</text>
+            </view>
+          <form bindsubmit="formSubmit" bindreset="formReset">
+           <view class="contair-fotter-center">
+               <textarea  placeholder="请输入备注信息"
+                          maxlengh="{{maxlengh}}"
+                          auto-focus='ture'
+                          cursor-spacing='10rpx'
+                          bindinput='textareaInput' >
+                    {{text}}</textarea>
+             </view>
+            <view class="contair-fotter-fotter" >
+                 <button formType="submit" style='background:#ff9933;color:#fff'>确认点餐</button> 
+             </view>
+               </form>
+        </view>
+  </view>
+

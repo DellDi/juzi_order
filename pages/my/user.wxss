@@ -1,0 +1,81 @@
+/* pages/my/user.wxss */
+.userinfo {
+  display: flex;
+  width:100%;
+  height: 240rpx;
+}
+.userinfo-avatar {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
+  margin-left: 40rpx;
+  margin-right: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size: 32rpx;
+  margin-top: 95rpx;
+}
+.mideal{
+  display: flex;
+  justify-content: row;
+  width: 100%;
+  height: 150rpx;
+ 
+}
+.line{
+    border-top: 3rpx solid #dad7d7;
+    border-bottom: 3rpx solid #dad7d7;
+    width: 100%;
+    height: 23rpx;
+    background-color:#f0efef; 
+
+}
+.mideal-item{
+  width: 250rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30rpx;
+  border-right: 3rpx solid #b9b8b8;
+}
+
+.mideal-item image{
+  width:35rpx;
+  height: 35rpx;
+}
+.mideal-item text{
+  font-size: 33rpx;
+  margin-top: 20rpx;
+}
+.user-item-xin{
+  display: flex;
+  justify-content: space-between;
+  width: 92%;
+  height: 90rpx;
+  margin:  0 4%;
+  align-items: center;
+  border-bottom: 3rpx solid #eee;
+ 
+}
+.user-item-xin text{
+  display: block;
+  text-align: left;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}
+.user-item-xin image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+  /* margin-top: 30rpx; */
+}
+.user-item{
+  display: flex;
+  justify-content: center;
+}
+.user-item image{
+    margin-top: 30rpx; 
+}

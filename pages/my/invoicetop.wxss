@@ -1,0 +1,88 @@
+.containor{
+  width: 96%;
+  height: 92%;
+  padding: 5% 2% 3% 2%;
+  margin: 0;
+}
+.line{
+  width: 100%;
+  height: 2rpx;
+  background-color:#e7e4e4; 
+  box-shadow:1rpx 1rpx 8rpx 1rpx #e0dfdf; 
+  margin-bottom: 8rpx;
+}
+/* 头部 */
+.containor-top{
+  width: 96%;
+  height: 88%;
+  padding:6% 2%;
+  border: 3rpx solid #cfcbcb;
+}
+.containor-top-list{
+  display: flex;
+  justify-content: space-between;
+}
+.containor-top-list text{
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+/* 中间 */
+.containor-center{
+  width:84%;
+  height: 84%;
+  padding: 11% 4% 5% 4%;
+  margin: 0 4%;
+  margin-top: 50rpx;
+  background-color: #ede8e8;
+  -moz-box-shadow:0 0 60rpx #383737;
+  -webkit-box-shadow:0 0 50rpx #383737;
+  box-shadow:0 0 50rpx #383737; 
+  /* border: 1rpx solid #999898; */
+
+}
+.containor-center-top image{
+  display: block;
+  width: 260rpx;
+  height: 260rpx;
+  margin: 0 auto;
+}
+.containor-center-fotter{
+  display: flex;
+  justify-content: row;
+  margin-top:40rpx; 
+}
+.containor-center-fotter image {
+   width: 36rpx;
+   height: 36rpx;
+   margin-right: 10rpx;
+   margin-top: 10rpx;  
+}
+.center-right text {
+  font-size:30rpx;
+  color: #757171;
+}
+
+/* 低部 */
+.containor-fotter{
+  margin-top: 40rpx;
+  width: 92%;
+  height: 100%;
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
+}
+.containor-fotter button{
+  width: 200rpx;
+  height: 50rpx;
+  font-size: 29rpx;
+  padding: 5rpx 10rpx;
+  background-color: #ff9933;
+  color: white;
+  border-radius: 5rpx;
+  box-shadow:1rpx 1rpx 15rpx 1rpx #b4b2b2;
+  line-height: 45rpx; 
+}
+.one button{
+   width: 100rpx;
+   height: 46rpx;
+}

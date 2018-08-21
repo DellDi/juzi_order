@@ -1,0 +1,45 @@
+<!--pages/menu/menudetail.wxml-->
+<!--pages/detail/detail.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+  <block wx:for="{{imgUrl}}">
+    <swiper-item>
+      <image src='{{item}}' bindtap="viewbigimg" />
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y='true'>
+  <view class='detail'>
+    <text class='title'>{{kinds.food_name}}</text>
+    <text class='price'>￥{{kinds.now_price}}元/份</text>
+  </view>
+  <view class='detailword'>
+    <text>详情</text>
+    <image src='{{kinds.menu_image1}}' />
+  </view>
+  <view class='material'>
+       <view class='left'>
+           <view class='left-left'>食材: </view>
+           <view class='left-right'>{{kinds.menu_abstract}}</view>
+          </view>
+       <view class='right'>
+           <image src='/img/my/fooddetails.2.png'></image>
+           <text>安心食材</text>
+          </view>
+     </view>
+   <view class="line"></view>
+  <view class="separate">
+        <view class='left'>
+           <view class='left-left'>做法: </view>
+           <view class='left-right'>{{make}}</view>
+          </view>
+       <view class='right'>
+           <image src='/img/my/fooddetails.3.png'></image>
+           <text>精心烹制</text>
+          </view>
+     </view>
+  <view class="line"></view>
+</scroll-view>
+<!--底部悬浮框-->
+<view class='detail_nav'>
+  <button class='button-green' bindtap='addCar' data-id="{{kinds.menu_id}}" data-index="{{index}}">加入餐车</button>
+</view>

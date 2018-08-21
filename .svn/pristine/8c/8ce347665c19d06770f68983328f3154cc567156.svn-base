@@ -1,0 +1,134 @@
+/* pages/appointment/apponintdetail.wxss */
+.container{
+  width: 94%;
+  height: 92%;
+  margin: 0;
+  padding: 4% 3% 4% 3%;
+}
+.container-detail{
+  width: 100%;
+  height: 100%;
+  background-color:#e6e6e6 ;
+  border-radius:40rpx; 
+}
+
+/**头部**/
+.detail-top{
+  width: 100%;
+  height: 70rpx;
+  background-color:#ff9934; 
+  border-radius:40rpx; 
+  padding-top: 10rpx;
+  box-shadow: 1rpx 1rpx 6rpx 2rpx #5a5959;
+}
+.detail-top text{
+  margin-left:30rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: 590;
+  font-family: '黑体';
+}
+
+
+/**中间**/
+
+.detail-center{
+  width: 86%;
+  height: 80%;
+  margin: 4rpx 4%;
+  margin-bottom: 40rpx;
+  padding: 8% 3%;
+  background-color: #fff;
+}
+.detail-center-list{
+  width: 88%;
+  height: 70rpx;
+  padding: 0 6%;
+  padding-top:12rpx; 
+  margin-bottom: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color:#ffebd6;
+}
+.detail-center-list text{
+  font-size: 33rpx;
+  font-weight: 590;
+  font-family: '黑体';
+}
+.detail-content-left{ 
+  display: flex;
+  justify-content: space-between;
+}
+.detail-content-right text{
+  color:#8c8985;
+}
+
+.left-text{
+   padding-top:12rpx;
+  font-size: 33rpx;
+  font-weight: 590;
+  font-family: '黑体';
+}
+.left-cricle{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #ff9933;
+  font-size: 31rpx;
+  color: #fff;
+  margin-left: 10rpx;
+  margin-top:5rpx;
+  text-align: center;
+   
+}
+
+/**中间底部**/
+.content-fotter{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 85rpx;
+  margin: 120rpx auto;
+}
+.content-fotter-button{
+  width: 37%;
+  height: 45rpx;
+  background-color: #feb973;
+  border-radius: 45rpx;
+  padding: 17rpx 0;
+}
+.content-fotter-button navigator{
+  font-size: 31rpx;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+
+.fotter{
+  width: 50%;
+  height: 90rpx;
+  background-color:#ff9934; 
+  margin: 0 auto;
+  margin-top: 280rpx;
+  border-radius: 48rpx;
+}
+.fotter navigator{
+  display: flex;
+  justify-content: row;
+  padding: 0 20rpx;
+
+  }
+.fotter image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50rpx;
+  margin-top: 15rpx;
+  margin-right: 30rpx;
+
+}
+.fotter-text{
+  font-size: 35rpx;
+  color: white;
+  margin-top: 20rpx;
+}

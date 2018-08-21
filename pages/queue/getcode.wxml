@@ -1,0 +1,41 @@
+<!--pages/queue/getcode.wxml-->
+<view class="container">
+    <view class="detail">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+              <view class="section">
+                <view class="section-left">
+                    <image src="/img/classify/classify.7.png"></image>
+                   </view>
+                <view class="section-right">
+                    <view class="section-right-left">
+                        <text>餐桌类型</text>
+                        <text>{{type}}</text>
+                      </view>
+                   </view>
+              </view>
+<input type='text' hidden='true' name="table_type_id" value='{{id}}'></input>
+              <view class="section">
+                  <view class="section-left">
+                      <input placeholder='请输入电话号码' bindinput="phoneInput" name="mobile"  value=''></input>
+                         </view>
+                  <view class="section-right one">
+                         <button class='right yanzheng_btn' bindtap="bindButtonTap" disabled='{{disabled}}'
+                          >获取验证码</button>
+                    </view>
+                 </view>
+              <view class="section">
+                   <input placeholder="短信验证码" type="number" maxlength="6" value='' bindblur="checkcode" />
+                 </view>
+    
+                <!-- 底部 --> 
+       <view class="fotter">
+             <button formType="submit"> 立即排队</button>
+                 <checkbox-group  bindchange="niming">
+                       <view class='check-box'>
+                           <checkbox  value="不需要短信提醒"  value='需要短信提醒' />是否需要短信提醒
+                          </view>
+                    </checkbox-group>
+          </view>
+     </form>
+    </view>
+ </view>

@@ -1,0 +1,82 @@
+/**index.wxss**/
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} 
+.line{
+  width: 100%;
+  height: 2rpx;
+  background-color:#e7e4e4; 
+  box-shadow:1rpx 1rpx 8rpx 1rpx #e0dfdf; 
+  margin-bottom: 8rpx;
+}
+.detail{
+  width: 96%;
+  height: 100%;
+  margin: 0 auto;
+}
+.section{
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: row;
+}
+.section-left image{
+  width: 24rpx;
+  height:32rpx; 
+  margin-right: 10rpx;
+  margin-top: 30rpx;
+}
+.one image{
+  width: 32rpx;
+  height:25rpx; 
+  margin-right: 2rpx;
+  margin-top: 30rpx;
+}
+.section-right{
+  padding: 0 1%;
+  width: 98%;
+  height: 100%;
+   display: flex;
+   color:#ddd;
+   justify-content: row;
+   line-height: 90rpx;
+   border-bottom: 2rpx solid #bfbfbf;
+
+}
+.section-right-left{
+  width: 25%;
+  height:100%;
+   font-size: 31rpx;
+   font-weight: bold;
+}
+.section-right-right{
+  width: 75%;
+  height:100%;
+}
+.section-right-right input{
+  width: 100%;
+  height: 100%;
+  font-size: 29rpx;
+  text-align: right;
+  margin-top: 20rpx;
+}
+.fotter{
+  width: 86%;
+  height: 100%;
+  font-size: 25rpx;
+  color: #b9b8b8;
+  margin: 25rpx 7%;
+  font-weight: bold;
+}
+.fotter button{
+  margin-top: 80rpx;
+  width: 400rpx;
+  height: 100%;
+  background-color: #ff9933;
+  font-size: 30rpx;
+  color: white;
+   box-shadow:1rpx 1rpx 15rpx 1rpx #b4b2b2; 
+}

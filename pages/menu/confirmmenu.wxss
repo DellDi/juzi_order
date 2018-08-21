@@ -1,0 +1,70 @@
+/* pages/menu/confirmmenu.wxss */
+@import"../menu/menualready.wxss";
+.contair-top{
+  width: 100%;
+  height: 80rpx;
+}
+.contair-top text{
+  font-size: 38rpx;
+  margin-left: 60rpx;
+  line-height: 80rpx;
+}
+.contair-detail{
+  line-height: 45rpx;
+   width: 100%;
+   height:100%;
+   padding:2% 0; 
+  font-size: 35rpx;
+}
+.contair-detail-list{
+  display: flex;
+  justify-content: row;
+}
+.top-image image{
+  margin-top: 8rpx;
+  margin-left: 15rpx;
+  width:33rpx;
+  height: 35rpx; 
+}
+.contair-detail-list text{
+   margin-left:10rpx;
+}
+.money {
+  color: red;
+}
+.message{
+  font-size: 28rpx;
+}
+.contair-fotter{
+  width: 96%;
+  height:100%;
+  display: block;
+  font-size: 33rpx;
+}
+.contair-fotter-top{
+ font-size: 33rpx;
+  margin-top: 30rpx;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: row;
+   float:right;
+}
+.hidden{
+  display: none;
+}
+.right-text{
+  width: 56%;
+  height: 100%;
+}
+.contair-fotter-fotter-left{
+   margin: 0 auto;
+   margin-top: 70rpx;
+   width: 280rpx;
+  font-size: 31rpx;
+  color: white;
+  background-color: #ff9933;
+  border-radius: 10rpx;
+  padding: 20rpx 50rpx;
+  text-align: center;
+}

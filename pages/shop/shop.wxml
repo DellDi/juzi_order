@@ -1,0 +1,78 @@
+<!--pages/shop/shop.wxml-->
+<view class="container">
+
+   <!--头部-->
+
+    <view class="container-top">
+      <view class="container-top-left">
+       <view class="container-top-left-image"> 
+          <image src="/img/home/shop.1.png"></image>
+       </view>
+       <view class="container-top-city"> 
+         <text>{{city}}</text>
+         <image src="/img/home/shop.2.png" bindtap="bindcity" ></image>
+       </view>
+      </view>
+    <view class="map" bindtap="bindmap">
+      <image src="/img/home/shop.3.png"></image>
+      <text>地图模式</text>
+    </view>
+  </view>
+
+   <!--可选店铺--> 
+  <view class="store-content">
+    <view class="store-center-content">
+        <view class="store-center-content-top-image">
+          <image src="/img/home/shop.7.png"></image>
+          <text>可选店铺</text>
+        </view>
+       <view class="store-num">
+         <block wx:for="{{shop_name}}" wx:from-index="{{id}}">
+           <view class="recent-orders-content" bindtap="storedetail" data-index="{{item.id}}">
+                <view class="store-content-left">
+                   <image src="{{item.shop_logo}}"></image>
+                </view>
+
+                <!--店铺信息-->
+                <view class="store-content-center">
+                     <view class="list">
+                       <text>橘子餐饮</text>
+                       <text class="world">({{item.shop_name}}店)</text>
+                     </view>
+                     <view class="list">
+                       <text>地址:</text>
+                       <text class="world">{{item.shop_address}}</text>
+                     </view>
+                     <view class="list">
+                       <!-- <text>地址:</text> -->
+                       <text class="storeaddress world" wx:for="{{item.classes}}" wx:for-item="table">{{table.name}}{{table.num}}</text>
+                     </view>
+                      <view class="list">
+                           <image src="/img/home/shop.5.png" />
+                           <text>距离:  </text>
+                           <text class="world"> {{item.dist}}KM</text>
+                      </view>
+                 </view>
+               <view class="store-content-right" wx:if="{{item.is_come}}">
+                   <view class="thing">
+                         <image src="/img/home/shop.4.png"></image>
+                  </view>
+              </view>    
+           </view>
+         </block>
+      </view>
+    </view>
+
+ <!--当前位置-->
+    <view class="address">
+      <view class="address-left">
+         <image src="/img/home/shop.6.png" />
+      </view>
+      <view class="address-text">
+       <text>当前位置</text>
+       <text class="address-text-right">{{currentaddress}}</text>
+      </view>
+    </view>
+    </view>
+</view>
+

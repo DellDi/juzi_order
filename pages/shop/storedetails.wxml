@@ -1,0 +1,217 @@
+<!-- pages/shop/storedetails.wxml -->
+<view class="container">
+  <!--轮播图-->
+  <view class="my-swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:350rpx;">
+      <block wx:for="{{shopRes.lunbo}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--餐厅介绍-->
+  <view class="content">
+    <view class="content-detail">
+      <view class="content-detail-top">
+        <view class="content-detail-top-text">
+          <text>桔子餐饮</text>
+          <text>({{shopRes.shop_name}}店)</text>
+        </view>
+        <view class="content-detail-top-money">
+          <image src="/img/home/storedetails.1.png" />
+          <text>人均: {{shopRes.avg_spend}}元</text>
+        </view>
+      </view>
+
+      <view class="content-detail-center">
+        <view class="list">
+          <view>
+            <image src="/img/home/storedetails.2.png" />
+          </view>
+          <text>简介：</text>
+          <text class="world">{{shopRes.shop_introduc}}</text>
+        </view>
+        <view class="list">
+          <text>营业时间：</text>
+          <text class="world">{{shopRes.start_time}}--{{shopRes.end_time}}</text>
+        </view>
+        <view class="list">
+          <text>餐位：</text>
+          <text class="world storeaddress" wx:for="{{shopRes.classes}}" wx:for-item="table">{{table.name}}{{table.num}}</text>
+        </view>
+        <view class="list">
+          <text>地址：</text>
+          <text class="world">{{shopRes.shop_addess}}</text>
+        </view>
+      </view>
+
+      <view class="content-detail-fotter">
+        <view class="content-detail-fotter-button" bindtap='bitphone'>
+          <image src="/img/home/storedetails.3.png"></image>
+          <view class="adr">拨打电话</view>
+        </view>
+        <view class="content-detail-fotter-button" bindtap="bindmap">
+          <image src="/img/home/storedetails.4.png" />
+          <view class="adr">查看定位</view>
+        </view>
+      </view>
+      <!--优惠卷-->
+      <view class="coupon">
+        <view class="coupon-top">
+          <view class="coupon-top-left">
+            <image src="/img/home/storedetails.5.png"></image>
+            <text>优惠劵</text>
+          </view>
+          <view class="coupon-top-right">
+            <view class="hide{{showView?'show':''}}" bindtap="onChangeShowState">
+              {{showView?'收起优惠':'更多优惠'}}
+              <image src="/img/home/storedetails.6.png"></image>
+            </view>
+            <!-- 按钮 -->
+            <view class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">
+              {{showView?'收起优惠':'更多优惠'}}
+              <image src="/img/home/storedetails.6.png"></image>
+            </view>
+          </view>
+        </view>
+        <!--更多优惠卷-->
+        <view class="hide {{showView?'show':''}}">
+          <view class="box">
+            <view wx:for="{{vouchers}}" data-id="{{item.voucher_id}}" class="coupon-center " style="background-image: url('http://ngfyzt.natappfree.cc/orange/public/img/home/coupon.1.png');">
+              <view class="coupon-center-left">
+                <view class="coupon-center-left-left">
+                  <text>¥ </text>
+                  <text class="money">{{item.voucher_money}}</text>
+                </view>
+                <view wx:if="{{item.favor_type==1}}" class="coupon-center-left-right">
+                  <view class="subtraction"></view>
+                  <view>代金券</view>
+                </view>
+                <view wx:else class="coupon-center-left-right">
+                  <view class="subtraction">满{{item.full_money}}使用</view>
+                  <view>满减券</view>
+                </view>
+              </view>
+              <view wx:if="{{item.voucher_price}}" class="coupont-center-right" bindtap="needpay" data-id="{{item.voucher_id}}">
+                <view>点击</view>
+                <view>领取</view>
+                <view class="right">></view>
+              </view>
+              <view class="coupont-center-right" bindtap="toreceive" data-id="{{item.voucher_id}}" wx:else>
+                <view>点击</view>
+                <view>领取</view>
+                <view class="right">></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class=" {{thefirst?'show':'hidden'}}">
+        <view id="{{vouchers[0].voucher_id}}" class="coupon-center" style="background-image: url('http://ngfyzt.natappfree.cc/orange/public/img/home/coupon.1.png');">
+          <view class="coupon-center-left">
+            <view class="coupon-center-left-left">
+              <text>¥ </text>
+              <text class="money">{{vouchers[0].voucher_money}}</text>
+            </view>
+            <view wx:if="{{vouchers[0].favor_type==1}}" class="coupon-center-left-right">
+              <view class="subtraction"></view>
+              <view>代金券</view>
+            </view>
+            <view wx:else class="coupon-center-left-right">
+              <view class="subtraction">满{{vouchers[0].full_money}}使用</view>
+              <view>满减券</view>
+            </view>
+          </view>
+          <view wx:if="{{vouchers[0].voucher_price}}" class="coupont-center-right" bindtap="needpay" data-id="{{vouchers[0].voucher_id}}">
+            <view>点击</view>
+            <view>领取</view>
+            <view class="right">></view>
+          </view>
+          <view wx:else class="coupont-center-right" bindtap="toreceive" data-id="{{vouchers[0].voucher_id}}">
+            <view>点击</view>
+            <view>领取</view>
+            <view class="right">></view>
+          </view>
+        </view>
+      </view>
+
+      <!--预约，点餐  排队-->
+      <view class="content-detail-list">
+        <!-- <navigator url="../appointment/appointment">
+            <view class="detail-list">
+               <view class="detail-list-left">
+                  <image src="/img/home/storedetails.7.png"></image>
+                  <view>预约</view>
+                 </view>
+               <view class="detail-list-right">
+                   <text>聚餐活动</text>
+                   <image src="/img/home/storedetails.10.png"></image>
+                  </view>
+               </view>
+            </navigator>
+          <navigator url="../appointment/appointment">
+             <view class="detail-list">
+                <view class="detail-list-left">
+                    <image src="/img/home/storedetails.8.png"></image>
+                     <view>点餐</view>
+                   </view>
+                 <view class="detail-list-right">
+                      <text>大家都在线点餐</text>
+                      <image src="/img/home/storedetails.10.png"></image>
+                      </view>
+               </view>
+            </navigator>
+          <navigator url="../queue/queue">
+              <view class="detail-list">
+                     <view class="detail-list-left">
+                              <image src="/img/home/storedetails.9.png"></image>
+                              <view>排队</view>
+                            </view>
+                     <view class="detail-list-right">
+                           <text>排队预约，叫号提醒，即时查看</text>
+                           <image src="/img/home/storedetails.10.png"></image>
+                          </view>
+                   </view>
+              </navigator>
+           </view> -->
+        <view bindtap='appoint' data-shopid="{{shopRes.id}}">
+          <view class="detail-list">
+            <view class="detail-list-left">
+              <image src="/img/home/storedetails.7.png"></image>
+              <view>预约</view>
+            </view>
+            <view class="detail-list-right">
+              <text>聚餐活动</text>
+              <image src="/img/home/storedetails.10.png"></image>
+            </view>
+          </view>
+        </view>
+        <view bindtap='diancan' data-shopid="{{shopRes.id}}">
+          <view class="detail-list">
+            <view class="detail-list-left">
+              <image src="/img/home/storedetails.8.png"></image>
+              <view>点餐</view>
+            </view>
+            <view class="detail-list-right">
+              <text>大家都在线点餐</text>
+              <image src="/img/home/storedetails.10.png"></image>
+            </view>
+          </view>
+        </view>
+        <view bindtap='queue' data-shopid="{{shopRes.id}}">
+          <view class="detail-list">
+            <view class="detail-list-left">
+              <image src="/img/home/storedetails.9.png"></image>
+              <view>排队</view>
+            </view>
+            <view class="detail-list-right">
+              <text>排队预约，叫号提醒，即时查看</text>
+              <image src="/img/home/storedetails.10.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

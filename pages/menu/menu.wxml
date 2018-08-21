@@ -1,0 +1,79 @@
+<!--pages/order/order.wxml-->
+<view class='conent_container'>
+  <view class="lin"></view>
+  <view class='seat'>
+    <image src="/img/home/map.2.png"></image>
+    <view>座位：大厅五号{{setnum}}</view>
+  </view>
+  <!-- 优惠券 -->
+  <view class="coupon-center " style="background-image: url('/img/home/coupon.1.png');">
+      <view class="coupon-center-left">
+         <view class="coupon-center-left-left">
+             <text>¥ </text>
+             <text class="money">{{money}}20</text>
+            </view>
+         </view>
+      <view class="coupont-center-right">
+          <view class="subtraction">满{{subtraction}}元使用</view>
+          <view class="click" bindtap="bindcoupont">立即领取></view>
+          <view class="data">有效期： 2018.10.12{{starttime}}--2018.10.12{{endtime}}</view>
+      </view>
+     </view>
+    <!--菜品分类-->
+  <view class="container"> 
+    <!--左侧栏-->
+    <view class='menu_line'>
+      <text>菜单分类</text>
+    </view>
+    <view class="nav_left">
+      <block wx:for="{{foods}}">
+        <scroll-view class="nav_left_items {{curNav== item.food_type_id ? 'active' : ''}}" bindtap="turnfoods" data-index="{{index}}" scroll-y='true' data-id="{{item.food_type_id}}">{{item.food_type}} 
+             </scroll-view>
+      </block>
+      </view>
+    <!--右侧栏-->
+    <scroll-view class="nav_right" scroll-y='true'>
+      <!--如果有数据，才遍历项-->
+        <view class='title'>{{foods[selected].food_type}}</view>
+        <view class="list">
+           <view class="content_box" wx:for="{{foods[selected].food}}" data-id="{{items.id}}" wx:key="{{key}}">
+               <view class="ProductIco_box">
+                  <image class="ProductIco" src="{{item.menu_image1}}" bindtap="detail" data-id="{{item.menu_id}}" data-index='{{index}}'></image>
+                 </view>
+             <!--内容 -->
+            <view class="view_content">
+               <view class='view_title'>
+                   <view class="foodname">{{item.food_name}}</view>
+                  <view class="month">月售： {{}}999单</view>
+                  <view class="fotter">
+                        <view class="red">¥ {{item.now_price}}</view>
+                        <view class="monthseal">{{item.food_size}}</view>
+                     </view>
+                 <!--价格和按钮 -->
+                </view>
+               <view class="view_btn_box">
+                    <view class="view_img_left" bindtap='numminus' hidden='{{item.num==0}}' data-index="{{index}}" data-id="{{item.menu_id}}">
+                        <image src="/img/minus.png"></image>
+                      </view>
+                     <text class='text' hidden='{{item.num==0}}'>{{item.num}}</text>
+                     <view class="view_img_right" bindtap='numadd' data-index="{{index}}" data-id="{{item.menu_id}}">
+                         <image src="/img/plus.png"></image>
+                       </view>
+                  </view>
+              </view>
+               <!--删除按钮 -->
+            </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="buy_btn_box {{cost!=0?'active':''}}">
+    <view class="collect_right">
+       <view class="icon">
+           <image src="/img/my/shoping.png"></image>
+           <view class="count" hidden='{{count==0}}'>{{count}}</view>
+        </view>
+       <text class="collect_two" style='margin-left:40rpx;' hidden='{{cost==0}}'>¥{{cost}}</text>
+       </view>
+    <view class="pay" bindtap='toCart'>{{cost!=0?'选好了':'请挑选'}}</view>
+   </view>
+</view>

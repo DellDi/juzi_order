@@ -1,0 +1,49 @@
+<!--pages/queue/queue.wxml-->
+<view class="container">
+    <view class="container-detail">
+    <!--头部-->
+       <view class="detail-top">
+          <view class="top-left">
+              <image src="/img/classify/classify.1.png"></image>
+              <view class="top-left-text">餐桌类型</view>
+          </view>
+          <view class="top-left">
+              <image src="/img/classify/classify.2.png"></image>
+              <view class="top-left-text">等待桌数</view>
+          </view> 
+           <view class="top-left">
+              <image src="/img/classify/classify.3.png"></image>
+              <view class="top-left-text">立即取号</view>
+          </view>
+       </view>
+     <!--中间-->
+        <view class="detail-center">
+            <block wx:for="{{queue_lst}}">
+               <view class="detail-center-list">
+                  <view class="detail-content-left">
+                      <text>{{item.content_table}}</text>
+                  </view>
+                  <view class="detail-content-center">
+                     <text>{{item.queue_num}}</text>
+                  </view>
+                  <view class="detail-content-right">
+                     <navigator  url="./getcode?id={{item.id}}&type={{item.content_table}}" data-index="{{item.id}}"data-tabletype="{{item.content_table}}" >
+                      <image src="/img/classify/classify.4.png"></image>
+                     </navigator>
+                  </view>
+                </view>  
+            </block>
+        </view>
+
+         <!--底部-->
+
+        <view class="detail-fotter" bindtap='refresh'>
+  
+               <image src="/img/appointment/appointment.15.png"></image>
+  
+             
+              <view class="detail-fotter-text">刷新状态</view>  
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,114 @@
+<!--pages/menu/paymentmenu.wxml-->
+<view class="container">
+ <view class="lin"></view>
+    <view class="detail">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+              <view class="section">
+                 <view class="section-left">
+                    <image src="/img/my/orderpayment.2.png"></image>
+                     </view>
+                 <view class="section-right">
+                    <view class="section-right-left">
+                        <text>订单编号</text>
+                      </view>
+                    <view class="section-right-right">
+                        <text>{{order.order_num}}</text>
+                     </view>
+                 </view>
+               </view>
+
+              <view class="section">
+                <view class="section-left one">
+                    <image src="/img/my/orderpayment.9.png"></image>
+                   </view>
+                 <view class="section-right">
+                     <view class="section-right-left">
+                         <text>下单时间</text>
+                       </view>
+                     <view class="section-right-right">
+                          <text>{{order.order_time}}</text>
+                       </view>
+                   </view>
+               </view>
+             
+              <view class="section">
+                 <view class="section-left one">
+                    <image src="/img/my/orderpayment.6.png"></image>
+                   </view>
+                 <view class="section-right">
+                     <view class="section-right-left">
+                          <text>菜品小计</text>
+                        </view>
+                      <view class="section-right-right">
+                           <view class="red">￥{{order.food_price}}</view>
+                         </view>
+                   </view>
+                </view>
+<view>
+               <!-- <view class="section">
+                    <view class="section-left two">
+                        <image src="/img/my/orderpayment.8.png"></image>
+                       </view>
+                    <view class="section-right">
+                       <view class="section-right-left">
+                            <text>可参与满减</text>
+                         </view>
+                        <view class="section-right-right">
+                             <view class="red">满{{}}减{{}}</view>
+                           </view>
+                       </view>
+                 </view> -->
+
+                <view class="section">
+                   <view class="section-left one">
+                        <image src="/img/my/orderpayment.13.png"></image>
+                     </view>
+                   <view class="section-right">
+                       <view class="section-right-left">
+                           <text>满减券</text>
+                         </view>
+                       <view class="section-right-right">
+                           <view wx:if="{{cutMonney==0}}">您有{{order.num}}张代金券</view>
+                               <view wx:else class="red" >-￥{{cutMonney}}</view>
+                               <image src="/img/my/orderpayment.3.png" bindtap='click'></image>
+                         </view>
+                     </view>
+                 </view>               
+</view>
+                <view class="section">
+                 <view class="section-left one">
+                    <image src="/img/my/orderpayment.4.png"></image>
+                   </view>
+                 <view class="section-right">
+                     <view class="section-right-left">
+                          <text>会员号</text>
+                        </view>
+                      <view class="section-right-right">
+                           <text>{{order.member_id}}</text>
+                         </view>
+                   </view>
+                </view>
+
+
+                 <view class="section">
+                   <view class="section-left one">
+                        <image src="/img/my/orderpayment.10.png"></image>
+                     </view>
+                   <view class="section-right">
+                       <view class="section-right-left">
+                           <text>索要发票</text>
+                         </view>
+                       <view class="section-right-right">
+                           <navigator url="../my/invoice">
+                               <image src="/img/my/orderpayment.3.png"></image>
+                           </navigator>
+                         </view>
+                     </view>
+                 </view>
+                  <view class="fotter" bindtap='submit'>
+                      还需支付(￥{{order.food_price-cutMonney}}元)
+                  </view>
+         </form>
+     </view>
+ </view>
+

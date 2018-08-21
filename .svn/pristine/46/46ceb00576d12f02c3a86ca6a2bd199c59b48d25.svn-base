@@ -1,0 +1,173 @@
+<!--pages/home/home.wxml-->
+<view class='container'>
+  <view class='today'>
+   <view class="info">
+    <view class='city'>
+        <image src='/img/16.png' class='image'/>
+        <text class='chengshi'>{{city}}</text>
+    </view>
+   <view class="phone_one" bindtap="clickPerson">
+  <view class="phone_personal">{{firstPerson}}</view>
+  <image src="/icon/3.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image> 
+  </view>
+<block >
+   <view class="phone_select" hidden="{{selectPerson}}">
+    <view wx:for="{{shop_name}}" class="select_one" bindtap="mySelect"  data-me="{{item.shop_name}}">{{item.shop_name}}</view>
+     <!-- <view class="select_one" bindtap="mySelect" data-me="{{shop_name[2].shop_name}}">{{shop_name[2].shop_name}}</view>
+      <view class="select_one" bindtap="mySelect" data-me="{{shop_name[3].shop_name}}">{{shop_name[3].shop_name}}</view> -->
+  </view>
+ </block>
+  </view>
+   <view class='temp'>
+        <view >
+        <navigator url="../shop/shop">
+           {{today.wendu}}C
+        </navigator>
+        </view>
+        <view class='weather'>{{today.todayInfo.type}}</view>
+    </view>
+  </view>
+
+ 
+ <view class="search-bar">
+    <icon type="search" size="30"/>
+     <input class="select" bindchange="search" placeholder="搜索菜品"/>
+ </view>
+
+ <swiper indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+ <block wx:for="{{image}}" >
+  <swiper-item>
+   <image src='{{item}}' data-src='{{item}}' bindtap="previewImage" />
+  </swiper-item>
+ </block> 
+ </swiper>
+<view class="content">
+    <view class="order"> 
+        <navigator url="../appointment/appointment">
+           <image class="menu" src="/img/saoma.jpg"> </image>
+        </navigator> 
+        <text>预约</text>
+    </view> 
+    <view class="order" > 
+      <navigator url="../queue/queue">
+           <image class="menu" src="/img/saoma.jpg"> </image>
+      </navigator> 
+      <text>排号</text>
+    </view>
+    <view class="order" >  
+      <navigator url="../index/index">
+        <image class="menu" src="/img/saoma.jpg"> </image>
+      </navigator> 
+      <text>点餐</text>
+    </view>  
+</view>
+  <view class="recent-orders">
+  <view class="recent-orders-title">
+    <view class="recent-orders-title-left">
+      <view class="line-one"></view>
+      <view class="line-two"></view>
+    </view>
+    <view class="recent-orders-title-right">
+      <text class="left-text">最近订单 </text>
+      <navigator url="../index/index">
+        <text class="right-text">>></text>
+      </navigator>
+    </view>
+  </view>
+  <view class="recent-orders-content">
+    <view class="recent-orders-content-left">
+    <view class="list">
+      <text>橘子餐饮({{latest_order.shop_name}}店)</text>
+    </view>
+    <view class="list">
+      <text>订单号:</text>
+      <text class="world">{{latest_order.order_num}}</text>
+      </view>
+      <view class="list">
+      <text>下单时间:</text>
+      <text class="world"> {{latest_order.order_time}}</text>
+    </view>
+    </view>
+    <view class="recent-orderss-content-right">
+      <view wx:if="{{latest.order_state == 0}}" class="ing">
+        <navigator url="../index/index">
+         ...正在进行
+        </navigator>
+      </view>
+      <view wx:else="{{latest.order_state == 1}}" class="ing">
+        <navigator url="../index/index">
+         ...已完成
+        </navigator>
+      </view>
+      <view class="totle">
+        <text>总额:</text><text class="world-two">{{latest_order.total_order}}元</text>
+      </view>
+    </view>
+   </view>
+  </view>
+ <!--门店信息 -->
+
+ <!-- <view class="store">
+  <view class="recent-orders-title">
+    <view class="recent-orders-title-left">
+      <view class="line-one"></view>
+      <view class="line-two"></view>
+    </view>
+    <view class="recent-orders-top-center">
+      <text class="left-text">门店</text>
+      <navigator url="../index/index">
+        <text class="right-text">>></text>
+      </navigator>
+    </view>
+  </view>
+  <view class="recent-content">
+       <view class="store-content-left" >
+          <image src="{{shop_name[0].shop_logo}}"></image>
+       </view>
+    
+       <view class="store-content-center" >
+          <view class="list" >
+            <text>橘子餐饮({{shop_name[0].shop_name}})</text>
+          </view>
+          <view class="list">
+            <text>{{shop_name[0].shop_address}}</text>
+          </view>
+          <view class="list table">
+            <text wx:for="{{shop_name[0].classes}}" >
+            {{item.name}}:{{item.num}}
+            </text>
+          </view>
+          <view class="list">
+            <text>距离: {{shop_name[0].dist}}KM</text>
+          </view>
+       </view>
+    
+       <view wx:if="{{shop_name[1].is_come}}"  class="store-content-right">
+          <view class="thing">
+           <navigator url="../index/index">
+              我去过
+           </navigator>
+          </view>
+       </view>
+  </view>
+ </view> -->
+    <!-- 今日推荐 -->
+  <view class='jinritijiandaohang'><text>今日推荐</text></view>
+     <scroll-view class="recommend_scroll_x_box" scroll-x="true">
+      <view class="recommend_hot_box" wx:for="{{menu_push}}" wx:for-index="idx"       wx:for-item="good">
+        <image src="{{good.menu_image1}}" class="recommend_hot_image"></image>
+          <text>{{good.food_name}}</text>
+          <text class='nomal'>{{good.pre_price}}元/份</text>
+          <text class='VIP' style='color:red'>会员：{{good.now_price}}元</text>
+      </view>
+   </scroll-view>
+    <!-- 优惠卷 -->
+  <!-- <view class="coupon">
+  <view class="couponimage">
+      <image  src="../../img/lbt2.png"></image>
+   </view>
+    <button class="couponbutton"  bindtap="bindcoupon">
+    </button>
+  </view> -->
+</view> 
+
