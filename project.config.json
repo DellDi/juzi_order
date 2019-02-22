@@ -8,12 +8,13 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.0",
-	"appid": "wx8518366e7f373603",
-	"projectname": "jzdcwwdgdfhgwb",
+	"libVersion": "2.4.3",
+	"appid": "wx31154ab09782ed12",
+	"projectname": "JUZI",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

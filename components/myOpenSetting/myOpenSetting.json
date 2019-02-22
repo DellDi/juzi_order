@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "myOpenSetting": "/components/myOpenSetting/myOpenSetting"
+  }
+}

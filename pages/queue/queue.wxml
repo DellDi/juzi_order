@@ -4,15 +4,12 @@
     <!--头部-->
        <view class="detail-top">
           <view class="top-left">
-              <image src="/img/classify/classify.1.png"></image>
               <view class="top-left-text">餐桌类型</view>
           </view>
           <view class="top-left">
-              <image src="/img/classify/classify.2.png"></image>
               <view class="top-left-text">等待桌数</view>
           </view> 
            <view class="top-left">
-              <image src="/img/classify/classify.3.png"></image>
               <view class="top-left-text">立即取号</view>
           </view>
        </view>
@@ -38,10 +35,6 @@
          <!--底部-->
 
         <view class="detail-fotter" bindtap='refresh'>
-  
-               <image src="/img/appointment/appointment.15.png"></image>
-  
-             
               <view class="detail-fotter-text">刷新状态</view>  
         </view>
     </view>

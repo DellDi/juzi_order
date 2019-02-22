@@ -1,0 +1,11 @@
+<!--pages/home/authorize.wxml-->
+  <view class='top'>
+   <image src='/img/home/orange.png'></image>
+  </view>
+  <view class='bottom'>
+  <view class='bottom-top'><view class='bottom-left'>.</view><text class='center'>桔子餐饮需要获得您的位置信息</text></view>
+  <button open-type="openSetting" bindtap='handler'>确认授权</button>
+  <loading hidden='{{hidden}}' bindchange='loadingchange'>
+    定位中... 
+  </loading>
+  </view>

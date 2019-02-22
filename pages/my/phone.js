@@ -82,6 +82,27 @@ Page({
       return;
 
     };
+    wx: wx.request({
+      url: getApp().globalData.domain + 'Queue/get_mobile_code',
+      // method: 'GET',
+      data: {
+        mobile: phone
+      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      success: function (res) {
+        // wx.setStorageSync('code', res.data.code);
+        getApp().globalData.code = res.data.code;
+        // that.setData({
+        //   queue_lst: res.data
+        // })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
 
 
@@ -99,8 +120,68 @@ Page({
     } else {
       check = 1
     }
-    console.log(e.detail.value);
-    console.log(check);
   },
+  checkcode: function (e) {
+    var that = this;
+    if (e.detail.value !== getApp().globalData.code) {
+      that.data.checkcode = 0;
+    } else {
+      that.data.checkcode = 1;
+    }
+  },
+
+  formSubmit:function(e){
+    var that = this;
+    if (that.data.checkcode == 0) {
+      wx.showToast({
+        title: '验证码不正确',
+        icon: 'none',
+        duration: 1500
+      })
+    } else {
+      that.bind_mobile(e);
+    }
+  },
+  bind_mobile:function(e){
+    wx: wx.request({
+      url: getApp().globalData.domain + 'Member/bind_mobile',
+      // method: 'GET',
+      data: {
+        mobile: e.detail.value.mobile,
+        realname: e.detail.value.realname,
+        openid: getApp().globalData.openid
+      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      success: function (res) {
+          if(res.data.result==1){
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'success',
+              image: '',
+              duration: 0,
+              mask: true,
+              success: function (res) { 
+                wx.redirectTo({
+                  url: './Membershipcard',
+                })
+              },
+              fail: function (res) { },
+              complete: function (res) { },
+            })
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'fail',
+            })
+          }
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  }
 
 })

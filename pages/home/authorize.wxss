@@ -1,0 +1,58 @@
+/* pages/home/authorize.wxss */
+
+page {
+  background: #f5f2f0;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+}
+
+.top image {
+  width: 150rpx;
+  height: 170rpx;
+}
+
+.bottom {
+  margin-top: 60rpx;
+}
+
+.bottom-left {
+  margin-top: -40rpx;
+  width: 20rpx;
+  height: 30rpx;
+  font-size: 60rpx;
+  margin-right: 10rpx;
+  margin-left: 30rpx;
+  color: #ccc;
+}
+
+.center {
+  font-size: 30rpx;
+  color: #888;
+  word-wrap: break-word;
+}
+
+button {
+  margin-top: 60rpx;
+  width: 95%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #17c470;
+  font-size: 37rpx;
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+}
+
+.bottom-top {
+  display: flex;
+}

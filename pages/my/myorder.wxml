@@ -8,7 +8,7 @@
         </view>
   </view>
       <!--进行中 -->
-  <view class="{{selected?'show1':'hidden1'}}" wx:for="{{order[0]}}" wx:for-item="item">
+  <view class="{{selected?'show1':'hidden1'}}" wx:for="{{order[1]}}" wx:for-item="item">
     <view class="detail">
         <view class="ing">
              <view class="contair-detail-list">
@@ -22,12 +22,17 @@
                  <text>下单时间：{{item.order_time}}</text>
                 </view>
               <view class="contair-detail-list">
-                    <text>已支付：</text>
-                    <text class="money">{{item.already_pay}}元</text>
-                    <!--<button class="world">进行中</button> -->
+                    <text>需支付：</text>
+                    <text class="money">{{item.food_price}}元</text>
                </view>
+               <form bindsubmit="formSubmit"  report-submit="ture" bindreset="formReset">
+                  <view class="caipin-right one">
+                     <button formType="submit" bindtap="cancel" data-orderid="{{item.order_num}}">取消订单</button>
+                      <button bindtap="order" data-orderid="{{item.order_num}}">立即支付</button>
+                  </view> 
+                </form>
           </view>  
-          <view class="line"></view>
+          
      <!--已点菜品可隐藏 -->
       <view class="caipin">
            <view class="caipin-left">
@@ -39,7 +44,7 @@
                  <button  class="" bindtap="onChangeShowState" data-index="{{index}}">菜品列表</button>
               </view>
          </view>
-         <view class="line"></view>
+         
             <view class='{{showView==index?"":"hidden"}}' >   
                 <view class="box">
                     <block wx:for="{{item.order_detail}}"  wx:for-item="detail" id="{{item.id}}">
@@ -56,7 +61,7 @@
                                  </view>
                               </view>
                             <view class="list-right">
-                                 <text>{{detail.food_price}}</text>
+                                 <text>{{detail.now_price}}</text>
                                  <text class="text">*{{detail.food_num}}</text>
                              </view>
                           </view>
@@ -64,30 +69,11 @@
                     </view>
                 <view class="line"></view>    
               </view> 
-        <!--底部 -->
-        
-      <!-- <view class="ing">
-            <view class="contair-detail-list">
-                 <text>桔子餐饮（{{stor}}店）</text>
-              </view>
-         <view class="contair-detail-list">
-              <text>订单编号：{{data}}  {{time}}</text>
-           </view>
-         <view class="contair-detail-list">
-              <text>下单时间：{{data}}  {{time}}</text>
-            </view>
-         <view class="contair-detail-list">
-             <view class="list-left">
-                 <text>已支付：</text>
-                <text class="money">{{money}}元</text>
-               </view>
-           </view>
-       </view> -->
       </view>    
   </view>
      <!--已完成 -->
 
-  <view class="{{selected1?'show1':'hidden1'}}" wx:for="{{order[1]}}" wx:for-item="item">
+  <view class="{{selected1?'show1':'hidden1'}}" wx:for="{{order[0]}}" wx:for-item="item">
        <view class="detail">
         <view class="ing">
              <view class="contair-detail-list">
@@ -134,7 +120,7 @@
                                  </view>
                               </view>
                             <view class="list-right">
-                                 <text>{{detail.food_price}}</text>
+                                 <text>{{detail.now_price}}</text>
                                  <text class="text">*{{detail.food_num}}</text>
                              </view>
                           </view>

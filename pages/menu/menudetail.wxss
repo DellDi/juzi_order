@@ -1,126 +1,146 @@
 /* pages/menu/menudetail.wxss */
-page{
-display: flex;
-flex-direction: column;
+
+page {
+  display: flex;
+  flex-direction: column;
 }
+
 swiper {
-  height: 280rpx;
+  height: 163px;
 }
+
 swiper-item image {
   width: 100%;
   height: 100%;
 }
-.detail{
-  width: 88%;
-  padding:0 6%;
-  height: 65rpx;
-  line-height: 65rpx;
+
+.detail {
+  width: 100%;
+  height: 36px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.price{
-  color: red;
-  font-size: 28rpx;
-  font-weight: 600;
+
+.price {
+  font-size: 16px;
+  font-family: PingFang SC;
+  color: rgba(248, 47, 47, 1);
+  margin-right: 6.4%;
 }
-.title{
-  font-size: 36rpx;
-  font-weight: 600;
+
+.title {
+  font-size: 18px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 5.6%;
 }
-.line{
-  width: 100%;
-  height:20rpx;
-  background-color:#e2e1e1;
-  border-bottom:2rpx solid #d8d6d6;
-  border-top:2rpx solid #d8d6d6;
-}
-.detailword{
+
+.detailword {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #e2e1e1;
-  text-align: center;
-  font-size: 34rpx;
-  line-height: 50rpx;
-  font-weight: 600;
-  border-top: 3rpx solid rgb(199, 196, 196);
+  flex-direction: column;
 }
-.detailword image{
+
+.linees {
   width: 100%;
-  height:280rpx;
+  height: 20px;
+  background: rgba(235, 235, 235, 1);
 }
-.material{
+
+.detailword image {
+  width: 100%;
+  height: 163px;
+}
+
+.material {
   display: flex;
   justify-content: space-between;
-  width:94%;
+  width: 91.46%;
   height: 100%;
-  padding: 10rpx 0 10rpx  6%;
+  margin-left: 3.55%;
+  padding: 20rpx 0;
 }
-.text-remark{
+
+.text-remark {
   padding-top: 10rpx;
-  font-size: 30rpx;
+  font-size: 35rpx;
   margin-left: 15rpx;
 }
-.right{
+
+.right {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.right image{
-  width:50rpx;
+
+.right image {
+  width: 50rpx;
   height: 50rpx;
   margin-bottom: 10rpx;
 }
-.separate{
-  width:94%;
-  padding: 10rpx 0 10rpx 6%;
+
+.linee {
+  width: 91.46%;
+  height: 10px;
+  margin-left: 4.25%;
+  background: rgba(235, 235, 235, 1);
+}
+
+.separate {
+  width: 91.46%;
   display: flex;
   justify-content: space-between;
   height: 100%;
+  margin-left: 3.45%;
+  padding: 20rpx 0;
 }
-.left{
-  width: 60%;
+
+.left {
   height: 100%;
-  padding-top: 10rpx;
   font-size: 30rpx;
-  margin-left: 15rpx;
   display: flex;
   justify-content: row;
 }
-.left-left{
-   width: 20%;
-  font-weight: 600;
+
+.left-left {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  margin-right: 10px;
 }
-.left-right{
-   width: 85%;
-  font-size: 26rpx;
-  margin-left: 20rpx;
+
+.left-right {
+  font-size: 14px;
   display: flex;
-  justify-content: clounm;
-} 
-.right{
-  width: 20%;
+  justify-content: center;
+}
+
+.right {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  font-size: 25rpx;
-  color: #ff9933;
-  padding-top: 20rpx;
- text-align:right;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(23, 196, 112, 1);
+  text-align: right;
 }
-.right image{
-  width:35rpx;
-  height: 35rpx;
+
+.right image {
+  width: 40rpx;
+  height: 40rpx;
 }
-.button-green{
-  margin-top: 60rpx;
-  width:380rpx;
-  height: 75rpx;
+
+.button-green {
+  margin: 60rpx auto;
+  width: 172px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ff9933;
-  font-size: 35rpx;
+  background: rgba(23, 196, 112, 1);
+  font-size: 14px;
   color: #fff;
+  border-radius: 40rpx;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.27);
 }

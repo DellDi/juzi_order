@@ -1,109 +1,149 @@
 /* pages/menu/paymentmenu.wxss */
-/**index.wxss**/
-page{
- background: #F5F2F0;
+
+page {
+  background: #edeaeb;
 }
-.container{
-  width: 100%;
-  height: 100%;
+
+.container {
+  width: 96%;
+  height: 392px;
   margin: 0;
-  padding: 0;
-} 
-.lin{
-  width: 100%;
-  height: 5rpx;
-  background-color:#F5F2F0; 
-  box-shadow:1rpx 1rpx 10rpx 1rpx #F5F2F0; 
-  margin-bottom: 8rpx;
-}
-.detail{
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-.section{
-  width: 100%;
-  height:100%;
-  display: flex;
-  justify-content: row;
+  margin-left: 2%;
   background-color: #fff;
+  margin-top: 13px;
 }
-.section-left image{
-  width: 25rpx;
-  height:33rpx; 
-  margin-right: 10rpx;
-  margin-top: 35rpx;
-  margin-left: 10rpx;
-}
-.one image{
-  width: 32rpx;
-  height:32rpx; 
-  margin-right: 5rpx;
-  margin-top: 38rpx;
-}
-.two image{
-  width: 35rpx;
-  height:25rpx; 
-  margin-right: 0rpx;
-  margin-top: 40rpx;
-}
-.section-right {
-   display: flex;
-   justify-content: space-between;
-   font-size: 33rpx;
-  line-height: 100rpx;
-  padding: 0 1%;
-  width: 98%;
+
+.detail {
+  width: 94.8%;
   height: 100%;
-   border-bottom: 2rpx solid #F5F2F0;
+  margin-left: 2.51%;
+  padding-top: 14px;
 }
-.section-right-right{
-  display: flex;
-  justify-content: row;
-}
-.section-right-right text{
+
+.section {
   width: 100%;
-  height: 100%;
-  font-size: 31rpx; 
-  color:#999696;
-  margin-top: 20rpx;
-}
-.red{
-  color:red;
-}
-.section-right-right image{
-  height:35rpx;
-  width: 35rpx;
-  border-radius: 50%;
-  float: right;
-  margin-top: 33rpx;
-  margin-left:15rpx;
-  }
-.fotter{
-  width: 100%;
-  height: 90rpx;
-  margin-top: 453rpx;
-  position: fixed;
-  color: white;
-  font-size: 33rpx;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff9933;
-
+  background-color: #fff;
+  border-bottom: 1px solid #edeaeb;
 }
-/* .fotter button{
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
-  border: none;
+
+.section-left-one image {
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+}
+
+.section-left-two image {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.section-left-three image {
+  width: 13px;
+  height: 12px;
+  margin-right: 7px;
+}
+
+.section-left-four image {
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+}
+
+.section-left-six image {
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+}
+
+.section-left-five image {
+  width: 13px;
+  height: 13px;
+  margin-right: 7px;
+}
+
+.section-right-left text {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.section-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #ff9933;
-  font-size: 28rpx;
-  color: white;
-
 }
-button::after{
-  border:none;
-} */
+
+.section-right-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-right-right {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(176, 176, 176, 1);
+}
+
+.hidden {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(176, 176, 176, 1);
+  margin-right: 25rpx;
+}
+
+.red {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(253, 47, 47, 1);
+}
+
+.section-right-right image {
+  height: 10px;
+  width: 9px;
+}
+
+/* 底部 */
+
+.containe-fotterr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46px;
+}
+
+.fotter-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47.77%;
+  height: 36px;
+  margin-right: 8.6%;
+  color: white;
+  font-size: 14px;
+  background: rgba(23, 196, 112, 1);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.fotter-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 21.9%;
+  margin-left: 8.6%;
+  margin-right: 13.3%;
+  height: 36px;
+  color: white;
+  font-size: 14px;
+  background: rgba(23, 196, 112, 1);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  border: none;
+}

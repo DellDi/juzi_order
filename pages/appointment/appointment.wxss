@@ -1,120 +1,233 @@
-.container{
- width: 100%;
- height: 100%;
- margin: 0;
- padding: 0;
+.container1 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
-.detail{
- width: 100%;
- height: 100%;
- margin: 0;
- padding:0;
+
+.detail {
+}
+
+/* 设置背景图 */
+
+.cont_bg {
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+}
+
+/* 图片 */
+
+#con_img {
+  width: 100%;
+  height: 200rpx;
+  z-index: 0;
 }
 
 /**头部**/
 
-.detail-top{
-  position:relative;
-  width:88%;
-  height: 88%; 
-  padding:6% 6%;
-}
-.detail-top-content{
-  display: flex;
-  justify-content: space-between;
-  margin: 2% 0% 2% 2%;
-  width: 98%;
-  height: 96%; 
-}
-.detail-top-content-left{
-  width: 30%;
-  height:100%;
-  margin-right: 60rpx;
-}
-.detail-top-content-left image{
-  width: 200rpx;
-  height: 180rpx; 
-}
-.detail-top-content-right{
-  width: 55%;
-  height:100%;
-}
-.list{
-  font-size: 30rpx;
-  color: black;
-  margin-top: 18rpx;
-  overflow:hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
-
-/**中间**/
-.detail-content{
-  margin-bottom: 295rpx;
+.detail-top {
+  position: relative;
   width: 100%;
   height: 100%;
 }
-.detail-content-time image,.detail-content-num image,.detail-content-name image,.detail-content-tel image{
-    width: 30rpx;
-    height: 30rpx;
-    margin-top: 20rpx;
-    margin-right: 20rpx;
+
+.detail-top-content-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.detail-content-time,.detail-content-num,.detail-content-name,.detail-content-tel{
-  width: 88%;
-  height: 90rpx;
-  background-color: #fff;
-  color: black;
+
+.detail-top-content-left image {
+  width: 69px;
+  height: 69px;
+  z-index: 999;
+  margin-top: -20px;
+  position: absolute;
+}
+
+.img image {
+  width: 750rpx;
+  height: 100%;
+}
+
+.detail-top-content-right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.listes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listes-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.world {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-family: PingFang SC;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30px;
+}
+
+.list1 {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.listes image {
+  width: 9px;
+  height: 12px;
+  display: block;
+  margin-right: 2.4%;
+}
+
+.list-first {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-two {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-family: PingFang SC;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30px;
+  margin-left: 4%;
+  margin-bottom: 30px;
+}
+
+/**中间**/
+
+.detail-content {
+  margin-bottom: 295rpx;
+  width: 92%;
+  height: 181px;
+  margin-left: 4%;
+}
+
+.detail-content-time-left, .detail-content-num-left, .detail-content-name-left,
+.detail-content-tel-left {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.detail-content-time image {
+  width: 13px;
+  height: 13px;
+  margin-left: 7px;
+  margin-right: 12px;
+}
+
+.detail-content-num image {
+  width: 13px;
+  height: 12px;
+  margin-left: 7px;
+  margin-right: 12px;
+}
+
+.detail-content-name image {
+  width: 13px;
+  height: 14px;
+  margin-left: 7px;
+  margin-right: 12px;
+}
+
+.detail-content-tel image {
+  width: 13px;
+  height: 13px;
+  margin-left: 7px;
+  margin-right: 12px;
+}
+
+.detail-content-time, .detail-content-num, .detail-content-name,
+.detail-content-tel {
+  width: 100%;
+  height: 43px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 30rpx;
-  line-height: 80rpx;
-  padding: 0 6%;
-  font-weight: 590;
-  border-top: 3rpx solid #f3f1f1;
+  border-top: 2rpx solid rgba(153, 153, 153, 1);
+  font-family: PingFang SC;
+  color: rgba(153, 153, 153, 1);
 }
-.detail-content-tel{
-  border-bottom: 3rpx solid #f3f1f1;
+
+.detail-content-tel {
+  border-bottom: 2rpx solid rgba(153, 153, 153, 1);
 }
-.detail-content-time-right,.detail-content-num-right,.detail-content-name-right,.detail-content-tel-right{
-  font-size: 28rpx;
-  color: #969494;
+
+.detail-content-time-right, .detail-content-num-right,
+.detail-content-name-right, .detail-content-tel-right {
+  font-size: 15px;
+  font-family: PingFang SC;
+  color: rgba(153, 153, 153, 1);
+  padding-right: 7px;
 }
-.detail-content-name-right input,.detail-content-tel-right input{
-    width: 230rpx;
-    height: 100%;
-    font-size: 28rpx;
-    text-align: right;
+
+.detail-content-name-right input, .detail-content-tel-right input {
+  font-size: 15px;
+  font-family: PingFang SC;
+  color: rgba(153, 153, 153, 1);
+  padding-right: 7px;
+  text-align: right;
 }
 
 /**尾部**/
 
-.detail-content-fotter{
+.detail-content-fotter {
   display: flex;
-  justify-content: space-between;
-  width: 85%;
-  height: 85rpx;
-  margin: 50rpx auto;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+  margin-top: 104px;
+  margin-left: 34%;
 }
 
-.button{
-  display: flex;
-  justify-content: space-between;
-  width:243rpx;
-  height: 78rpx;
-  border-radius: 10rpx;
-  margin-top:20rpx;
-  padding: 0 35rpx;
-  background-color: #ff9933;
-}
-
-.button image{
-  width: 38rpx;
-  height:38rpx;
-  margin-top: 25rpx;
-}
-.adr{
-  font-size: 33rpx;
+.button {
+  width: 100%;
+  height: 35px;
+  font-size: 15px;
   color: #fff;
-   margin-top: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(23, 196, 112, 1);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }

@@ -1,16 +1,13 @@
 <!--pages/my/user.wxml-->
-<view class='container'>
+  <view class='container'>
   <!-- 头像 -->
-  <view class="userinfo" style="background-image: url('/img/my/my.8.png');background-size:100% 100%;">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <view class="userinfo" style="background-image: url('https://diancan.zhonghaokeji.net/img/my/my.8.png');background-size:100% 100%;">
+    <block >
+      <image class="userinfo-avatar" src="{{headimgurl}}"></image>
+      <text class="userinfo-nickname">{{nickname}}</text>
     </block>
   </view>
-
   <!-- 中间 -->
-
   <view class='mideal'>
     <navigator url="../my/mycar">
       <view class='mideal-item'>
@@ -18,14 +15,16 @@
         <text>我的卡包</text>
       </view>
     </navigator>
-    <navigator url="../my/mycar">
-      <view class='mideal-item'>
+    <view class='first'></view>
+    <view bindtap='address'>
+      <view class='mideal-item-two'>
         <image src='/img/my/my.3.png'></image>
-        <text>我的配送地址</text>
+        <text>配送地址</text>
       </view>
-    </navigator>
+    </view>
+    <view class='two'></view>
     <navigator url="../my/Membershipcard">
-      <view class='mideal-item' style="border-right:none;">
+      <view class='mideal-item-three'>
         <image src='/img/my/my.7.png'></image>
         <text>会员卡</text>
       </view>
@@ -35,12 +34,12 @@
 
   <!-- 中间一条线-->
 
-  <view class='line'></view>
+  <view class='line-f'></view>
   <!-- 列表-->
   <view class='user-item-bottom'>
     <navigator url="../my/myorder">
-      <view class='user-item-xin'>
-        <view class='user-item'>
+      <view class='user-item-xin-first'>
+        <view class='user-item-first'>
           <image src='/img/my/my.6.png'></image>
           <text>我的订单</text>
         </view>
@@ -48,8 +47,8 @@
       </view>
     </navigator>
     <navigator url="../appointment/appointorder">
-      <view class='user-item-xin'>
-        <view class='user-item'>
+      <view class='user-item-xin-two'>
+        <view class='user-item-two'>
           <image src='/img/my/appoint.png'></image>
           <text>我的预约</text>
         </view>
@@ -58,22 +57,22 @@
     </navigator>
 
     <navigator url="../my/invoice">
-      <view class='user-item-xin'>
-        <view class='user-item'>
+      <view class='user-item-xin-three'>
+        <view class='user-item-three'>
           <image src='/img/my/my.2.png'></image>
           <text>发票信息</text>
         </view>
         <image src='/img/my/my.5.png'></image>
       </view>
     </navigator>
-    <navigator url="/pages/address/address">
-      <view class='user-item-xin'>
-        <view class='user-item'>
+    <view bindtap='parcel'>
+      <view class='user-item-xin-four'>
+        <view class='user-item-four'>
           <image src='/img/my/my.4.png'></image>
           <text>外卖订单</text>
         </view>
         <image src='/img/my/my.5.png'></image>
       </view>
-    </navigator>
+    </view>
   </view>
 </view>

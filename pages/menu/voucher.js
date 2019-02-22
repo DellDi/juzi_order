@@ -1,54 +1,62 @@
 var id;
 Page({
   data: {
-    voucher:[],
+    cash_voucher: [],
+    full_cut_voucher: [],
+    disable: []
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.openHistorySearch();
     var that = this;
     that.setData({
-      date:options.data,
-      price:options.price
+      order_num: options.order_num,
+      price: options.price
     })
     wx.request({
       url: getApp().globalData.domain + 'Orderdish/voucher',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        date: this.data.date,
-
+        order_num: this.data.order_num,
       },
-      success: function (res) {
-        console.log(res);
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      success: function(res) {
         that.setData({
-          voucher: res.data
-          // cutMonney:res.data[index].voucher_num
+          cash_voucher: res.data.cash_voucher,
+          full_cut_voucher: res.data.full_cut_voucher,
+          disable: res.data.disable
         })
       }
     })
   },
-  openHistorySearch: function () {
+  openHistorySearch: function() {
     this.setData({
-      uhide: wx.getStorageSync('uhide') || '',//若无储存则为空
+      uhide: wx.getStorageSync('uhide') || '', //若无储存则为空
     })
   },
-  choseTxtColor: function (e) {
+  choseTxtColor: function(e) {
     var that = this;
     var uhide = this.data.uhide;
-    var item = this.data.item;
     var itemId = e.currentTarget.dataset.id;
     let pages = getCurrentPages();
     let prevPage = pages[pages.length - 2];
-   
     wx.request({
       url: getApp().globalData.domain + 'Orderdish/full_money',
-      method: 'GET',
+      // method: 'GET',
       data: {
         binding_id: itemId,
-        price:that.data.price
+        price: that.data.price
       },
-      success: function (res) {
-        console.log(res);
-        if(res.data.msg==1){
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res) {
+        if (res.data.msg == 1) {
           wx.setStorageSync('uhide', itemId)
           if (uhide == itemId) {
             that.setData({
@@ -59,6 +67,7 @@ Page({
               uhide: itemId
             })
           }
+          console.log(that.data.uhide)
           prevPage.setData({
             id: e.currentTarget.dataset.id,
             cutMonney: e.currentTarget.dataset.cutmonney,
@@ -66,16 +75,13 @@ Page({
           wx.navigateBack({
             delta: 1
           })
-        }else{
-          wx.showToast({
-            title: '不能使用',
-            icon: '',          
-          })
         }
-
+      },
+      fail: function() {
+        wx.showToast({
+          title: '服务器繁忙..',
+        })
       }
     })
-    console.log(e)
-
   }
 })

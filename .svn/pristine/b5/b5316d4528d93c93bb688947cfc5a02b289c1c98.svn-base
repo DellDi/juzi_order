@@ -1,9 +1,0 @@
-/**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  width: 100%;
-  border-top: 4rpx solid #f1efef;
-} 
-

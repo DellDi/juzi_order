@@ -1,0 +1,16 @@
+<!--pages/menu/paysuccess.wxml-->
+<view class="detail">
+    <view class="lin"></view>
+    <view class="content">
+       <view class="content-top">
+           <image src="/img/home/success.png"></image>
+         </view>
+       <view class="content-center">
+           <text>订单支付成功</text>
+         </view>
+          <view class="content-fotter" bindtap='success'>
+           <button>完成</button>
+         </view>
+    </view>
+</view>
+

@@ -64,26 +64,23 @@ Page({
   },
 
   formSubmit: function(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-
+    console.log(e.detail.value)
+    // return false;
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/add',
       method: 'GET',
       data: {
-        openid: wx.getStorageSync('openid'),
+        openid: getApp().globalData.openid,
         data: e.detail.value
       },
       header: {
-        'Accept': 'application/json'
+        'Accept': 'application/json' 
       },
+      // method: 'post',
+      // header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        console.log(res.data)
         if (res.data.result == 1) {
-          // wx.navigateBack({
-          //   delta:1
-          // })
-
           wx.navigateTo({
             url: './invoice'
           })
@@ -103,7 +100,6 @@ Page({
     })
   },
   formReset: function() {
-    console.log('form发生了reset事件')
   }
 
 

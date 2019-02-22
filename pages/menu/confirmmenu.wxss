@@ -1,70 +1,256 @@
 /* pages/menu/confirmmenu.wxss */
-@import"../menu/menualready.wxss";
-.contair-top{
+
+.container {
+  width: 89%;
+  margin-left: 5.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contair-top {
   width: 100%;
-  height: 80rpx;
+  margin-top: 14px;
+  margin-bottom: 8px;
 }
-.contair-top text{
-  font-size: 38rpx;
-  margin-left: 60rpx;
-  line-height: 80rpx;
+
+.contair-top text {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
 }
-.contair-detail{
-  line-height: 45rpx;
-   width: 100%;
-   height:100%;
-   padding:2% 0; 
-  font-size: 35rpx;
+
+.contair-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
 }
-.contair-detail-list{
+
+.contair-detail-list-two {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contair-detail-list-first {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.top-image-first image {
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top:5px; 
+}
+
+.top-image-two image {
+  width: 13px;
+  height: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* 已点菜品 */
+
+.caipin {
+  width: 100%;
+  height: 46px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.caipin-left {
+  height: 100%;
+  width: 300rpx;
+  display: flex;
+  align-items: center;
+}
+
+.caipin-left text {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.image image {
+  width: 13px;
+  height: 12px;
+  margin-right: 5px;
+  margin-left: 4px;
+}
+
+.caipin-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caipin-right button {
+  font-size: 10px;
+  color: #fff;
+  background: rgba(23, 196, 112, 1);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.box {
+  margin: 20rpx 0;
+}
+
+.list {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.list-left {
   display: flex;
   justify-content: row;
+  height: 100%;
 }
-.top-image image{
-  margin-top: 8rpx;
-  margin-left: 15rpx;
-  width:33rpx;
-  height: 35rpx; 
+
+.list-left-left {
+  width: 38rpx;
+  height: 100%;
+  margin: 0 5rpx;
 }
-.contair-detail-list text{
-   margin-left:10rpx;
+
+.list-left-center image {
+  width: 74px;
+  height: 74px;
 }
+
+.list-left-right text {
+  display: block;
+}
+
+.foodname {
+  letter-spacing: 3rpx;
+  font-size: 14px;
+  margin-left: 12px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.texted {
+  margin-top: 65rpx;
+  letter-spacing: 3rpx;
+  font-size: 14px;
+  margin-left: 12px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.list-right {
+  width: 23%;
+  height: 100%;
+  text-align: right;
+}
+
+.list-right text {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.contair-fotter {
+  width: 90%;
+  height: 100%;
+  margin-top: 30rpx;
+  padding: 0 5%;
+}
+
+.contair-fotter-top {
+  font-size: 35rpx;
+  margin-bottom: 10rpx;
+}
+
+.contair-detail-list text {
+  font-size: 14px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
 .money {
   color: red;
 }
-.message{
+
+.message {
   font-size: 28rpx;
 }
-.contair-fotter{
-  width: 96%;
-  height:100%;
+
+.contair-fotter {
+  width: 100%;
+  height: 100%;
   display: block;
-  font-size: 33rpx;
+  font-size: 14px;
 }
-.contair-fotter-top{
- font-size: 33rpx;
+
+.contair-fotter-top {
+  font-size: 16px;
   margin-top: 30rpx;
-  width: 50%;
   height: 100%;
   display: flex;
   justify-content: row;
-   float:right;
+  float: right;
 }
-.hidden{
+
+.hidden {
   display: none;
 }
-.right-text{
-  width: 56%;
+
+.right-text {
+  width: 100%;
   height: 100%;
+  color: rgba(51, 51, 51, 1);
 }
-.contair-fotter-fotter-left{
-   margin: 0 auto;
-   margin-top: 70rpx;
-   width: 280rpx;
-  font-size: 31rpx;
+
+.contair-fotter-fotter-left {
+  margin: 0 auto;
+  margin-top: 70rpx;
+  width: 200rpx;
+  font-size: 28rpx;
   color: white;
-  background-color: #ff9933;
+  background-color: #17c470;
   border-radius: 10rpx;
   padding: 20rpx 50rpx;
   text-align: center;
+}
+
+.contair-fotter-center textarea {
+  padding: 10rpx 2%;
+  width: 95%;
+  height: 120rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  border: 1rpx solid black;
+  margin-top: 10rpx;
+}
+
+.linee {
+  width: 100%;
+  height: 3rpx;
+  background-color: #f5f2f0;
+  box-shadow: 1rpx 1rpx 10rpx 1rpx #ebebeb;
+  margin-bottom: 8rpx;
 }

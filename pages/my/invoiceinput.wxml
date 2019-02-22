@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-   <view class="line"></view>
+   <view class="lin"></view>
     <view class="detail">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="section">
@@ -88,7 +88,7 @@
                      </view>
                  </view>
 
-               <view class="section">
+               <view class="section"> 
                     <view class="section-left">
                         <image src="/img/my/invoicetopinput.2.png"></image>
                        </view>
@@ -104,7 +104,7 @@
        
          <view class="fotter">
              <text>*请完整填写以上信息</text>
-             <button formType="submit">保存</button>
+             <button formType="submit">保存</button> 
            </view>
        </form>
      </view>

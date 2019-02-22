@@ -14,23 +14,9 @@ Page({
     name: '香菇牛腩土豆',
     price: '25',
     kinds: '',
-    // imgUrls: [
-    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057921620_middle.jpg",
-    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057922659_middle.jpg",
-    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057923813_middle.jpg",
-    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057924965_middle.jpg",
-    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057925958_middle.jpg"
-    // ],
     detail: '土豆，牛腩，葱，蒜',
     make: '小火慢炖，加糖三勺，水少许',
-    detailImg: [
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_1.jpg",
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_2.jpg",
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_3.jpg",
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_4.jpg",
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_5.jpg",
-      "http://7xnmrr.com1.z0.glb.clouddn.com/detail_6.jpg",
-    ],
+    detailImg: [],
   },
   previewImage: function (e) {
     var current = e.target.dataset.src;
@@ -97,39 +83,48 @@ Page({
   loaddetail: function (id, index) {
     var page = this;
     var menu_id = id;
-    var index = index;
-    // console.log(menu_id)
+    // var index = index;
     wx.request({
       url: getApp().globalData.domain + 'Orderdish/food_content',
-      method: 'GET',
+      // method: 'GET',
       data: {
         shop_id: 2,
         menu_id: menu_id
       },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
-        // console.log(res)
         var kinds = res.data[0]
         page.setData({
           kinds: kinds,
           imgUrl: res.data[0].lunbo[0],
-          index: index
+          // index: index
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          title: '服务器繁忙..',
         })
       }
     })
   },
   addCar: function (e) {
-    if (!wx.getStorageSync('tableno')) {
+    // console.log(e)
+    console.log(getApp().globalData.tableno)
+    if (!getApp().globalData.tableno) {
       wx.showToast({
         title: '请先扫码点餐',
-        icon:'none'
+        image:'../../img/home/model.png'
       })
       return false;
     }
     let pages = getCurrentPages();
     let prevPage = pages[pages.length - 2];
     prevPage.setData({
-      menu_id: e.target.dataset.id,
-      index: e.target.dataset.index
+      menu_id: e.currentTarget.dataset.id
     });
     wx.navigateBack({
       delta: 1

@@ -1,85 +1,120 @@
 page {
-  background-color: #fff;
   padding-bottom: 30rpx;
 }
-.line{
-  width: 100%;
-  height: 4rpx;
-  background-color:#e7e4e4; 
-  box-shadow:1rpx 1rpx 10rpx 1rpx #e0dfdf; 
-  margin-bottom: 8rpx;
-}
+
 /* 头部 */
+
 .nav {
   width: 100%;
-  height: 100rpx;
+  height: 44px;
   display: flex;
   flex-direction: row;
   background: #fff;
-
 }
 
 .default {
-  line-height: 110rpx;
-  text-align: center;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
-.default text{
-  padding: 5rpx 10rpx 15rpx 10rpx;
-  font-size: 32rpx;
-  color: #4d4b4b;
-}
-.red {
-  line-height: 87rpx;
-  text-align: center;
-  flex: 1;
-  font-size: 40rpx;
-  margin-top: 8rpx;
-}
-.red text{
-    color: #838080; 
-    padding: 20rpx 15rpx 26rpx 15rpx ;
-    border-radius: 5rpx;
 
-} 
+.default text {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  height: 26px;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.red {
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -17px;
+}
+
+.red text {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  height: 26px;
+  background: rgba(23, 196, 112, 0.1);
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
+.rselected {
+  width: 16px;
+  height: 16px;
+}
+
+.line-top {
+  width: 89%;
+  height: 7px;
+  margin-left: 5.5%;
+  background: rgba(23, 196, 112, 1);
+}
+
+.body {
+  width: 89%;
+  height: 1049px;
+  margin-left: 5.5%;
+  margin-top: 6px;
+  background: rgba(241, 241, 241, 0.4);
+  display: flex;
+  justify-content: center;
+}
+
 .show {
   display: block;
-  background-color: #ededed;
+  width: 87.7%;
 }
+
 .hidden {
   display: none;
 }
-.detail{
-   width: 80%;
-   height:86%;
-   margin: 0;
-   padding:  7% 10%;
-}
-/* 优惠券 */
-.content{
-  border-radius:25rpx;
+
+.detail {
   width: 100%;
-  height: 260rpx;
-  margin-bottom: 55rpx; 
-  background-size:100% 100%; 
+  height: 86%;
 }
-.isOverdue{
-  background-image: url('http://ngfyzt.natappfree.cc/orange/public/img/my/coupon.3.png');   
+
+/* 优惠券 */
+
+.content {
+  border-radius: 25rpx;
+  width: 100%;
+  height: 121px;
+  background-size: 100% 100%;
+  margin-top: 23px;
 }
-.notOverdue{
-  background-image: url('http://ngfyzt.natappfree.cc/orange/public/img/my/coupon.2.png');
+
+.isOverdue {
+  background-image: url('https://diancan.zhonghaokeji.net/img/my/coupon.3.png');
 }
-.content-center{
+
+.notOverdue {
+  background-image: url('https://diancan.zhonghaokeji.net/img/my/coupon.2.png');
+}
+
+.content-center {
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 94%;
-  padding: 0 3%;
-  height: 200rpx;
-   /* opacity:0.7; */
+  width: 100%;
+  height: 180rpx;
 }
 
-.content-center image{
+.content-center image {
   position: absolute;
   width: 130rpx;
   height: 130rpx;
@@ -87,50 +122,64 @@ page {
   top: 40rpx;
   right: 80rpx;
 }
-.content-center-left{
+
+.content-center-left {
   margin-left: 50rpx;
   width: 160rpx;
   height: 100%;
   font-size: 45rpx;
-  line-height: 250rpx;
+  line-height: 200rpx;
   color: white;
-
+  display: flex;
+  flex-direction: column;
 }
-.content-center-right{
-  margin-top: 55rpx; 
+
+.content-center-right {
+  margin-top: 50rpx;
   text-align: center;
   font-weight: bold;
- } 
-.money{
+  line-height: 40rpx;
+  padding-right: 30rpx;
+}
+
+.voucher_money {
+  display: flex;
+}
+
+.money {
   font-size: 80rpx;
 }
-.content-center-right-list{
+
+.voucher_content {
+  font-size: 26rpx;
+  color: #fff;
+  margin-top: 64rpx;
+  margin-left: -40rpx;
+}
+
+.content-center-right-list {
   width: 100%;
-  height: 35rpx; 
   font-size: 26rpx;
   color: white;
 }
-.style{
-  width: 100%;
-    font-size: 35rpx;
-    margin-bottom: 10rpx;
-}
+
 .content-fotter {
-  width: 90%;
-  height: 60rpx;
-  padding: 0  4.5% 0 5.5%;
-  font-size: 25rpx;
-  line-height: 58rpx;
-  margin-bottom: 20rpx;
+  width: 100%;
+  font-size: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rpx;
 }
-.use{
+
+.use {
   font-size: 26rpx;
   margin-left: 40rpx;
 }
-.detail-fotter{
+
+.detail-fotter {
   margin-top: 30rpx;
   margin-bottom: 40rpx;
-
-  font-size: 34rpx;
-  color:#7c7a7a;
+  font-size: 33rpx;
+  color: #7c7a7a;
 }

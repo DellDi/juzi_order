@@ -2,7 +2,7 @@
 <view class="container">
     <view class="detail">
         <view class="detail-content">
-            <view class="content-circle">
+            <view class="content-circle" style="background-image: url('/img/classify/classify.9.png');background-size:100% 100%;">
                <view class="content-circle-text">
                   <text>{{queue_no}}</text>
                </view> 
@@ -10,7 +10,6 @@
             <view class="content-footer">
                 <view class="content-footer-left">
                     <view class="list">
-                         <image  src="/img/classify/classify.5.png"></image>
                          <text>{{queue_no}}</text>
                     </view>
                      <view class="list">
@@ -22,18 +21,19 @@
                     </view>
                    </view>
                 <view class="content-footer-right">
-                     <navigator url="../menu/menu">
-                        <view class="menu" style="background-image: url('/img/classify/classify.6.png');background-size:100% 100%;">看菜单</view>
-                     </navigator>
+                     <view bindtap='menu'data-queue_no="{{queue_no}}">
+                        <view class="menu">看菜单<image src='/img/classify/classify.7.png'></image></view>
+                         <view class="detail-fotter-top">已等待... {{wait}}分钟</view>
+                     </view>
                 </view>
              </view>
         </view>
      </view>
     <view class="detail-fotter">
-          <view class="detail-fotter-top">已等待... {{wait}}分钟</view>
-          <view class="fotter" bindtap='cancel_queue'>  
-               <image  src="/img/classify/classify.8.png"></image>
-               <view>取消排队</view>
-             </view>
+            <form bindsubmit="formSubmit"  report-submit="ture" bindreset="formReset">
+             <button formType="submit">
+              取消排队</button>
+               </form>
+            
        </view>
 </view>

@@ -13,8 +13,8 @@
                </view>
           </block>
           
-         <view class="content">
-        <view class="box one" style="background-image: url('/img/my/invoice.3.png');background-size:100% 100%;">
+         <view class="content"> 
+        <view class="box one" style="background-image: url('https://diancan.zhonghaokeji.net/img/my/invoice.3.png');background-size:100% 100%;">
             <navigator url="../my/invoiceinput">
                 <image src="/img/my/invoice.1.png"></image>
               </navigator>

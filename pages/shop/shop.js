@@ -4,7 +4,9 @@ const app = getApp()
 
 Page({
   data: {
-    city: wx.getStorageSync('city'),
+   
+    city: getApp().globalData.city,
+    shop:[],
     item: [{
         "name": "",
         "num": "",
@@ -38,71 +40,56 @@ Page({
   },
   onLoad: function() {
     var that = this;
+    that.data.city = getApp().globalData.city
     that.get_city_shop();
   },
-
-
-  //   if (app.globalData.userInfo) {
-  //     this.setData({
-  //       userInfo: app.globalData.userInfo,
-  //       hasUserInfo: true
-  //     })
-  //   } else if (this.data.canIUse) {
-  //     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-  //     // 所以此处加入 callback 以防止这种情况
-  //     app.userInfoReadyCallback = res => {
-  //       this.setData({
-  //         userInfo: res.userInfo,
-  //         hasUserInfo: true
-  //       })
-  //     }
-  //   } else {
-  //     // 在没有 open-type=getUserInfo 版本的兼容处理
-  //     wx.getUserInfo({
-  //       success: res => {
-  //         app.globalData.userInfo = res.userInfo
-  //         this.setData({
-  //           userInfo: res.userInfo,
-  //           hasUserInfo: true
-  //         })
-  //       }
-  //     })
-  //   }
-  // },
-  // getUserInfo: function (e) {
-  //   app.globalData.userInfo = e.detail.userInfo
-  //   this.setData({
-  //     userInfo: e.detail.userInfo,
-  //     hasUserInfo: true
-  //   })
-
-
-
-
   get_city_shop: function() {
     var that = this;
+    var shop_name=that.data.shop_name;
     wx: wx.request({
       url: getApp().globalData.domain + 'Index/get_city_shop',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        latitude: wx.getStorageSync('latitude'),
-        longitude: wx.getStorageSync('longitude'),
-        openid: wx.getStorageSync('openid'),
+        latitude: getApp().globalData.latitude,
+        longitude: getApp().globalData.longitude,
+        openid: getApp().globalData.openid,
         city: that.data.city
       },
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function(res) {
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      success: function(res) { 
         that.setData({
           shop_name: res.data,
-          currentaddress: wx.getStorageSync('currentaddress'),
-          // city:wx.getStorageSync('city')
+          currentaddress: getApp().globalData.address,
+          city: that.data.city
+        });
+        that.flite();
+      },
+      fail: function () {
+        wx.showToast({
+          title: '服务器繁忙..',
         })
       },
-      fail: function(res) {},
       complete: function(res) {},
     })
+  },
+  flite(){
+
+    var shop_name = this.data.shop_name;
+    console.log(shop_name[1]['shop_address']);
+    for (var i = 0; i<shop_name.length; i++) {
+      var index=i;
+      var address = 'shop_name[" + i + "].shop_address';
+      var add = shop_name["+ index +"]['shop_address'].replace(/,/g,'');
+           console.log(add);
+          this.setData({
+            [address]: add,
+          })   
+      }
+    console.log('xixixi' + shop_name);
   },
   storedetail: function(e) {
     var storeid = e.currentTarget.dataset.index;

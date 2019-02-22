@@ -1,18 +1,52 @@
 <!--pages/menu/voucher.wxml-->
-<view class="line"></view>
-<view class="detail">
-              <view class="content"  wx:for="{{voucher}}"  data-id="{{item.binding_id}}" data-index="{{index}}" data-cutmonney='{{item.voucher_num}}'  bindtap="choseTxtColor"  style="{{uhide ==item.binding_id?'background-image: url(/img/my/coupon.2.jpg);background-size:100% 100%;':'background-image: url(/img/my/coupon.2.png);background-size:100% 100%;'}}" > 
-                   <view class="content-center" >
+<!-- 代金券 -->
+<view class="detail-top" hidden="{{cash_voucher=='' && full_cut_voucher==''}}">
+              <view class="line">
+              </view>
+              <view class="top-center">
+                  <text>可使用优惠券</text>
+              </view>
+              <view class="line">
+              </view>
+          </view>
+<view class="detail" hidden="{{cash_voucher==''}}">
+     <view class="content"  wx:for="{{cash_voucher}}"  data-id="{{item.binding_id}}" data-index="{{index}}" data-cutmonney='{{item.voucher_money}}'  bindtap="choseTxtColor"  style="{{uhide ==item.binding_id?'background-image: url(https://diancan.zhonghaokeji.net/img/my/coupon.1.jpg);background-size:100% 100%;':'background-image: url(https://diancan.zhonghaokeji.net/img/my/coupon.1.png);background-size:100% 100%;'}}" > 
+            <view class="content-center" >
+                  <view class="content-center-left">
+                       <text>¥</text>
+                       <text class="money">{{item.voucher_money}}</text>
+                      </view>
+                       <view class="content-center-right">
+                            <view class="content-center-right-list">
+                                 <text>桔子餐厅({{item.shopname}})</text>
+                               </view>
+                            <!-- <view class="content-center-right-list">
+                                 <text>{{item.usertime}}</text>
+                               </view> -->
+                            </view>
+                        </view>
+                      <view class="content-fotter">
+                         <view class="content-fotter-left">
+                              <text>使用期限： {{item.start_time}} ~ {{item.end_time}}</text>
+                              <text class="use">{{item.use}}</text>
+                            </view>
+                         </view> 
+                    </view>
+     </view>
+     <!-- 满减券 -->
+    <view class="detail-first" hidden="{{full_cut_voucher==''}}">
+              <view class="content"  wx:for="{{full_cut_voucher}}"  data-id="{{item.binding_id}}" data-index="{{index}}" data-cutmonney='{{item.voucher_money}}'  bindtap="choseTxtColor"  style="{{uhide ==item.binding_id?'background-image: url(https://diancan.zhonghaokeji.net/img/my/coupon.2.png);background-size:100% 100%;':'background-image: url(https://diancan.zhonghaokeji.net/img/my/coupon.2.jpg);background-size:100% 100%;'}}" > 
+                  <view class="content-center" >
                        <view class="content-center-left">
                            <text>¥</text>
-                           <text class="money">{{item.voucher_num}}</text>
+                           <text class="money">{{item.voucher_money}}</text>
                          </view>
                        <view class="content-center-right">
-                            <view class="content-center-right-list style {{item.full_money==null?'hidden':''}}">
+                            <view class="content-center-right-list style">
                                <text>满{{item.full_money}}可用</text>
                               </view>
                             <view class="content-center-right-list">
-                                 <text>桔子餐厅({{item.binding_shop}})</text>
+                                 <text>桔子餐厅({{item.shopname}})</text>
                                </view>
                             <!-- <view class="content-center-right-list">
                                  <text>{{item.usertime}}</text>
@@ -27,6 +61,48 @@
                          </view> 
                     </view>
     </view>
+      <!-- 不可用优惠券 -->
+ <view class='container'>
+    <view class="detail-top" hidden="{{disable==''}}">
+              <view class="line">
+              </view>
+              <view class="top-center">
+                  <text>不可使用优惠券</text>
+              </view>
+              <view class="line">
+              </view>
+          </view>
+      <view class="detail-two">
+              <view class="content"  wx:for="{{disable}}"  data-id="{{item.binding_id}}" data-index="{{index}}"  style="background-image: url('https://diancan.zhonghaokeji.net/img/my/coupon.png');background-size:100% 100%;" > 
+                   <view class="content-center" >
+                       <view class="content-center-left">
+                           <text>¥</text>
+                           <text class="money">{{item.voucher_money}}</text>
+                         </view>
+                       <view class="content-center-right">
+                            <view class="content-center-right-list style">
+                               <text  wx:if ="{{item.favor_type==2}}">满{{item.full_money}}可用</text>
+                                <text  wx:else ></text>
+                              </view>
+                            <view class="content-center-right-list">
+                                 <text>桔子餐厅({{item.shopname}})</text>
+                               </view>
+                            <!-- <view class="content-center-right-list">
+                                 <text>{{item.usertime}}</text>
+                               </view> -->
+                            </view>
+                        </view>
+                      <view class="content-fotter">
+                         <view class="content-fotter-left">
+                              <text>使用期限： {{item.start_time}} ~ {{item.end_time}}</text>
+                              <text class="use">{{item.use}}</text>
+                            </view>
+                         </view> 
+                    </view>
+      </view>
+    </view>
+    <view class='bottom'>没有更多优惠券了</view>
+
 
 
 

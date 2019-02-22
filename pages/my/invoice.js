@@ -5,14 +5,7 @@ Page({
    */
   data: {
     item: [
-      // {
-      //   title:"南京红桔信息技术有限公司",
-      //   num:"461616161644543654",
-      // },
-      // {
-      //   title: "南京红桔信息技术有限公司",
-      //   num: "461616161644543654",
-      // }
+
     ]
 
   },
@@ -24,16 +17,17 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/lst',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        openid: wx.getStorageSync('openid')
+        openid: getApp().globalData.openid
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res.data)
-
+        console.log(res)
         that.setData({
           invoice: res.data
         })

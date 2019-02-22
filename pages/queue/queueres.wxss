@@ -1,35 +1,42 @@
 /* pages/queue/queueres.wxss */
-.container{
+
+.container {
   width: 88%;
   height: 88%;
   margin: 0;
-  padding:6% 6%;
+  padding: 6% 6% 21%;
+  background: #f5f5f8;
+  position: relative;
 }
-.detail{
+
+.detail {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding:0;
-  background: linear-gradient(to top,#9be3f7, #e5f4fa); 
-  border-radius:5rpx; 
+  padding: 0;
+  border-radius: 5rpx;
+  background: #fff;
 }
-.detail-content{
+
+.detail-content {
   width: 90%;
   height: 84%;
   margin: 0 auto;
-  padding:7% 5%;
+  padding: 7% 5%;
 }
+
 /* 头部 */
-.content-circle{
+
+.content-circle {
   width: 450rpx;
   height: 430rpx;
   border-radius: 50%;
   background-color: #fff;
   margin: 15rpx auto;
-  padding-top:19rpx; 
-
+  padding-top: 19rpx;
 }
-.content-circle-text{
+
+.content-circle-text {
   width: 385rpx;
   height: 385rpx;
   border-radius: 50%;
@@ -37,71 +44,94 @@
   text-align: center;
   margin: 0 auto;
 }
-.content-circle-text{
-  font-size: 160rpx;
+
+.content-circle-text {
+  font-size: 150rpx;
   line-height: 370rpx;
 }
 
 /* 底部 */
-.content-footer{
+
+.content-footer {
   margin-top: 30rpx;
   width: 100%;
   height: 200rpx;
   display: flex;
   justify-content: space-around;
 }
-.content-footer-left text{
+
+.content-footer-left text {
   display: flex;
   justify-content: colunm;
-  font-size: 33rpx;
+  font-size: 35rpx;
   margin-top: 10rpx;
 }
+
 .list {
   display: flex;
   justify-content: row;
 }
-.list image{
+
+.list image {
   width: 25rpx;
   height: 23rpx;
   margin-top: 20rpx;
   margin-right: 10rpx;
   margin-left: -32rpx;
-} 
+}
+
 .text-fotter {
   display: flex;
   justify-content: row;
-  
 }
-.text-fotter text{
-  font-size: 38rpx;
-  margin-top: 20rpx;
+
+.text-fotter text {
+  font-size: 35rpx;
+  margin-top: 45rpx;
 }
-.text-fotter-text{
+
+.text-fotter-text {
   font-size: 45rpx;
 }
-.content-footer-right navigator{
+
+.content-footer-right navigator {
   padding: 3rpx 8rpx;
   font-size: 30rpx;
   margin-top: 110rpx;
-  
 }
- .menu{
-   width: 130rpx;
-   height: 55rpx;
-   padding-left: 30rpx;
-   padding-top: 7rpx;
- 
- }
- .detail-fotter-top{
-    margin-top:30rpx;
-    text-align: right;
-    font-size: 32rpx;
-    color: rgb(129, 125, 125); 
- }
-.fotter{
-  width: 30%;
+
+.detail-fotter {
+  background: #fff;
+  padding-bottom: 19%;
+  padding-top: 15%;
+}
+
+.menu {
+  width: 170rpx;
+  height: 55rpx;
+  padding-left: 130rpx;
+  padding-top: 7rpx;
+  display: flex;
+  margin-top: 110rpx;
+}
+
+.menu image {
+  width: 34rpx;
+  height: 38rpx;
+  margin: 10rpx 0 0 12rpx;
+}
+
+.detail-fotter-top {
+  margin-top: 33rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: rgb(129, 125, 125);
+}
+
+button {
+  width: 42%;
   height: 80rpx;
-  background-color: #ff9934; 
+  background-color: #17c470;
   text-align: center;
   font-size: 35rpx;
   color: #fff;
@@ -109,12 +139,7 @@
   margin: 0 auto;
   margin-top: 70rpx;
   display: flex;
-  justify-content: space-between;
-  padding: 0 40rpx;
+  justify-content: center;
+  align-items: center;
   border-radius: 5rpx;
 }
-.fotter image{
-  width: 38rpx;
-  height: 38rpx;
-  margin-top: 25rpx;
-} 

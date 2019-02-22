@@ -6,29 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: [
-      {
-        stor: "福田",
-        mun: "A02",
-        appintmun: "435463546365",
-        appinttime: "2018-8-17,12:38",
-        style: "2018-8-18,9:30,上午茶",
-      },
-      {
-        stor: "商城路",
-        mun: "A02",
-        appintmun: "435463546365",
-        appinttime: "2018-8-17,12:38",
-        style: "2018-8-18,9:30,上午茶",
-      },
-      {
-        stor: "紫金山",
-        mun: "A02",
-        appintmun: "435463546365",
-        appinttime: "2018-8-17,12:38",
-        style: "2018-8-18,9:30,上午茶",
-      }
-    ]
+    detail: []
   },
 
   /**
@@ -36,21 +14,27 @@ Page({
    */
   onLoad: function () {
     var that=this;
+    that.get_access_token();
+    
    wx.request({
-      url: getApp().globalData.domain + '/Appointment/appoint_lst',
+      url: getApp().globalData.domain + 'Appointment/appoint_lst',
       data: {
-        openid: wx.getStorageSync('openid')
+        openid: getApp().globalData.openid
       },
-      method: 'GET',
-      header: { 'Accept': 'application/json' },
+     method: 'post',
+     header: { "Content-Type": "application/x-www-form-urlencoded" },
       dataType: 'json',
       success: function (res) {
-        console.log(res.data)
+        console.log(res)
         that.setData({
           appoint: res.data
         })
       },
-      fail: function (res) { },
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器繁忙..',
+        })
+       },
       complete: function (res) { },
     })
   },
@@ -103,31 +87,89 @@ Page({
   onShareAppMessage: function () {
 
   },
-  cancel: function (e) {
+  get_access_token: function () {
+    var that = this;
+    wx.request({
+      url: "https://diancan.zhonghaokeji.net/index.php/api/Getopenid/get1",
+      data: {
+
+      },
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          _access_token: res.data.access_token//将_access_token存起来
+
+        })
+      }
+    })
+  },
+  formSubmit: function (e) {
     // console.log(e)
+    // return false;
     var that = this;
     var domain = getApp().globalData.domain;
     wx: wx.request({
       url: domain + 'Appointment/cancel_appoint',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        appointid: e.currentTarget.dataset.appointid
+        appointid: e.detail.target.dataset.appointid
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
+    
+        // return false;
         if (res.data.result == 1) {
+          var data = {};
           wx.showToast({
             title: '取消成功',
             icon: 'success',
             duration: 1500
           })
+          //发送模板消息
+          wx: wx.request({
+            url: 'https://diancan.zhonghaokeji.net/index.php/api/Getopenid/send3',
+            data: {
+              access_token: that.data._access_token,
+              template_id: 'AGpzKu1JwHo2e_FuKbWgULYw72fkY5kkrtX1CYhCTwA',
+              form_id: e.detail.formId,
+              _access_token: that.data._access_token,
+              openid: getApp().globalData.openid,
+                "keyword1":res.data.arr.appoint_detail, 
+                "keyword2": res.data.arr.appoint_table,
+                "keyword3": res.data.arr.cancel_time
+            },
+            method: 'post',
+            // header: { "Content-Type": "application/json" },
+            header: { "Content-Type": "application/x-www-form-urlencoded" },
+            dataType: 'json',
+            responseType: 'text',
+            success: function (res) {
+              console.log(res)
+            },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
           that.onLoad();
         }
       },
-      fail: function (res) { },
-      complete: function (res) { },
+      fail: function (res) { 
+        wx.showToast({
+          title: '服务器繁忙..',
+        })
+      },
+      complete: function (res) { }, 
+    })
+  },
+  menu: function (e) {
+    console.log(e)
+    getApp().globalData.tableno = e.currentTarget.dataset.tableno
+    getApp().globalData.shopid = e.currentTarget.dataset.shopid
+    wx.navigateTo({
+      url: '../menu/menu',
     })
   }
 })

@@ -1,10 +1,9 @@
 <!--pages/menu/paymentmenu.wxml-->
 <view class="container">
- <view class="lin"></view>
     <view class="detail">
-        <form bindsubmit="formSubmit" bindreset="formReset">
+        <form bindsubmit="formSubmit" report-submit="ture" bindreset="formReset">
               <view class="section">
-                 <view class="section-left">
+                 <view class="section-left-one">
                     <image src="/img/my/orderpayment.2.png"></image>
                      </view>
                  <view class="section-right">
@@ -18,7 +17,7 @@
                </view>
 
               <view class="section">
-                <view class="section-left one">
+                <view class="section-left-two">
                     <image src="/img/my/orderpayment.9.png"></image>
                    </view>
                  <view class="section-right">
@@ -32,7 +31,7 @@
                </view>
              
               <view class="section">
-                 <view class="section-left one">
+                 <view class="section-left-three">
                     <image src="/img/my/orderpayment.6.png"></image>
                    </view>
                  <view class="section-right">
@@ -45,22 +44,8 @@
                    </view>
                 </view>
 <view>
-               <!-- <view class="section">
-                    <view class="section-left two">
-                        <image src="/img/my/orderpayment.8.png"></image>
-                       </view>
-                    <view class="section-right">
-                       <view class="section-right-left">
-                            <text>可参与满减</text>
-                         </view>
-                        <view class="section-right-right">
-                             <view class="red">满{{}}减{{}}</view>
-                           </view>
-                       </view>
-                 </view> -->
-
                 <view class="section">
-                   <view class="section-left one">
+                   <view class="section-left-four">
                         <image src="/img/my/orderpayment.13.png"></image>
                      </view>
                    <view class="section-right">
@@ -68,7 +53,7 @@
                            <text>满减券</text>
                          </view>
                        <view class="section-right-right">
-                           <view wx:if="{{cutMonney==0}}">您有{{order.num}}张代金券</view>
+                           <view wx:if="{{cutMonney==0}}" class="hidden" hidden="{{order.num==''}}">您有{{order.num}}张优惠券</view>
                                <view wx:else class="red" >-￥{{cutMonney}}</view>
                                <image src="/img/my/orderpayment.3.png" bindtap='click'></image>
                          </view>
@@ -76,12 +61,12 @@
                  </view>               
 </view>
                 <view class="section">
-                 <view class="section-left one">
+                 <view class="section-left-five">
                     <image src="/img/my/orderpayment.4.png"></image>
                    </view>
                  <view class="section-right">
                      <view class="section-right-left">
-                          <text>会员号</text>
+                          <text>会员号</text> 
                         </view>
                       <view class="section-right-right">
                            <text>{{order.member_id}}</text>
@@ -91,7 +76,7 @@
 
 
                  <view class="section">
-                   <view class="section-left one">
+                   <view class="section-left-six">
                         <image src="/img/my/orderpayment.10.png"></image>
                      </view>
                    <view class="section-right">
@@ -105,9 +90,11 @@
                          </view>
                      </view>
                  </view>
-                  <view class="fotter" bindtap='submit'>
-                      还需支付(￥{{order.food_price-cutMonney}}元)
-                  </view>
+                 <view class="containe-fotterr">
+                    <view class="fotter-right" bindtap='rightsubmit'>返回</view>
+                    <button class="fotter-left" formType="submit">还需支付{{order.food_price-cutMonney}}元</button>
+                   </view>
+                   <input type='tetx' name ="need_pay" hidden='true' value='{{order.food_price-cutMonney}}'></input>
          </form>
      </view>
  </view>

@@ -1,57 +1,78 @@
 <!--pages/menu/confirmmenu.wxml-->
 <view class="container">
- <view class="lin"></view>
-    <view class="contair-top">
-        <text>桔子餐饮（{{menudel.shop_name}}）</text>
+  <view class="contair-top">
+     <text>桔子餐饮（{{menudel.shop_name}}）</text>
      </view>
-    <view class="line"></view>
-    <view class="contair-detail">
-        <view class="contair-detail-list">
-          <view class="top-image">
-              <image src="/img/my/firmorder.2.png"></image>
-           </view>
-           <text>订单编号：{{menudel.order_num}}</text>
-         </view>
-         <view class="contair-detail-list">
-           <view class="top-image">
-              <image src="/img/my/firmorder.1.png"></image>
-           </view>
-           <text>下单时间：{{menudel.order_time}}</text>
-         </view>
-     </view>
-    <view class="line"></view>
-    <view class="caipin">
-         <view class="caipin-left">
-             <view class="image">
-              <image src="/img/my/firmorder.3.png"></image>
-           </view>
-           <text>已点菜品</text>
-           </view>
-          <view class="caipin-right">
-            <button  class="hide{{showView?'show':''}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
-  <!-- //？:即表示了一种选择关系 -->
-            <button class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
-         </view>
-      </view>
-      <view class="line"></view>
-              <view class="hide{{showView?'show':''}}">  
-                <view class="box">
-                <import src='../template/disheslist'/>
-                  <template is="menu" data="{{menu}}" />
-                    </view>
-                    <view class="line"></view>
-                </view> 
-        <view class="contair-fotter">
-       <view  class="right-text {{menudel.remark_order==''?'hidden':''}}">
-             <text> 备注：{{menudel.remark_order}}</text>
-             </view>
-          <view class="contair-fotter-top">
-              <view>菜品小计：</view>
-              <view class="money" >{{menudel.food_price}}元</view>
-           </view>
+  <view class="line"></view>
+  <view class="contair-detail">
+    <view class="contair-detail-list-first">
+      <view class="top-image-first">
+        <image src="/img/my/firmorder.2.png"></image>
         </view>
-        <view class="contair-fotter-fotter-left" bindtap='submit' >
+       <text>订单编号：{{menudel.order_num}}</text>
+     </view>
+    <view class="contair-detail-list-two">
+      <view class="top-image-two">
+        <image src="/img/my/firmorder.1.png"></image>
+       </view>
+      <text>下单时间：{{menudel.order_time}}</text>
+      </view>
+   </view>
+  <view class="line"></view>
+  <view class="caipin">
+     <view class="caipin-left">
+         <view class="image">
+            <image src="/img/my/firmorder.3.png"></image>
+           </view>
+          <text>已点菜品</text>
+        </view>
+     <view class="caipin-right">
+        <button class="hide{{showView?'show':''}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+      <!-- //？:即表示了一种选择关系 -->
+        <button class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">{{showView?'收起列表':'显示列表'}}</button>
+      </view>
+     </view> 
+  <view class="line"></view>
+    <view class="hide{{showView?'show':''}}" style='width:100%'>
+       <view class="box">
+                    <block wx:for="{{menu}}" id="{{item.id}}">
+                        <view class="list">
+                            <view class="list-left">
+                                <view class="list-left-center">
+                                    <image src="{{item.menu[0].menu_image1}}"></image>
+                                 </view>
+                                <view class="list-left-right">
+                                     <text class='foodname'>{{item.food_name}}</text>
+                                     <text class="texted">x{{item.food_num}}</text>
+                                 </view>
+                              </view>
+                            <view class="list-right">
+                                 <text>￥{{item.now_price}}</text>
+                             </view>
+                          </view>
+                      </block>
+         </view>
+       <view class="line"></view>
+      </view>
+    <view class="contair-fotter">
+               <view class="right-text">
+                    <text>备注</text>
+                    <view class=" contair-fotter-center ">
+                       <textarea  placeholder="请输入备注信息 "
+                              maxlengh="{{maxlengh}} "
+                              auto-focus='ture'
+                              cursor-spacing='10rpx'
+                              bindinput='textareaInput' >
+                        {{text}}</textarea>
+                       </view>
+                  </view>
+              <view class="contair-fotter-top ">
+                  <view>菜品小计：</view>
+                  <view class="money ">{{menudel.food_price}}元</view>
+                 </view>
+       </view>
+    <view class="contair-fotter-fotter-left " bindtap='submit' data-order_num="{{menudel.order_num}}">
                下一步
            </view>
+          
   </view>
-

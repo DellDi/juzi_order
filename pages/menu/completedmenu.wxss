@@ -1,186 +1,198 @@
 /* pages/menu/completedmenu.wxss */
-.container{
+
+.container {
   width: 100%;
-  height:95%;
-  padding-bottom:5%;
+  height: 95%;
+  padding-bottom: 5%;
   margin: 0;
 }
-.lin{
-  width: 100%;
-  height: 4rpx;
-  background-color:#e7e4e4; 
-  box-shadow:1rpx 1rpx 10rpx 1rpx #e0dfdf; 
-  margin-bottom: 8rpx;
-}
-.line{
-  width: 100%;
-  height:16rpx;
-  background-color:#e2e1e1;
-  border-bottom:2rpx solid #d8d6d6;
-  border-top:2rpx solid #d8d6d6;
-}
-.contair-top{
+
+.contair-top {
   width: 100%;
   height: 80rpx;
 }
-.contair-top text{
+
+.contair-top text {
   font-size: 38rpx;
   margin-left: 40rpx;
   line-height: 80rpx;
 }
-.contair-detail{
-   width: 100%;
-   height:96%;
-   padding:2% 0; 
+
+.contair-detail {
+  width: 100%;
+  height: 96%;
+  padding: 2% 0;
   font-size: 35rpx;
 }
-.contair-detail-list{
+
+.contair-detail-list {
   display: flex;
   justify-content: row;
 }
-.top-image image{
+
+.top-image image {
   margin-top: 10rpx;
   margin-left: 40rpx;
-  width:33rpx;
-  height: 33rpx; 
+  width: 40rpx;
+  height: 40rpx;
 }
-.contair-detail-list text{
-   line-height: 50rpx;
-   margin-left:15rpx;
-   margin-bottom: 0rpx;
-   font-size: 33rpx;
+
+.contair-detail-list text {
+  line-height: 50rpx;
+  margin-left: 15rpx;
+  margin-bottom: 0rpx;
+  font-size: 33rpx;
 }
-.money text{
+
+.money text {
   color: red;
 }
-.caipin{
+
+.caipin {
   width: 100%;
-  height:100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
-.caipin-left{
-   height: 100%;
-   width: 300rpx;
-   display: flex;
+
+.caipin-left {
+  height: 100%;
+  width: 300rpx;
+  display: flex;
   justify-content: row;
 }
-.caipin-left text{
+
+.caipin-left text {
   font-size: 35rpx;
   line-height: 80rpx;
   margin-left: 10rpx;
 }
-.image image{
+
+.image image {
   margin-top: 21rpx;
   margin-left: 40rpx;
-  width:34rpx;
-  height: 40rpx; 
+  width: 34rpx;
+  height: 40rpx;
 }
-.caipin-right{
+
+.caipin-right {
   width: 200rpx;
   height: 100%;
 }
-.caipin-right button{
+
+.caipin-right button {
   margin-left: 0rpx;
   width: 150rpx;
-  height:50rpx;
-  background-color:#ff9933;
+  height: 50rpx;
+  background-color: #f93;
   padding: 5rpx 10rpx;
   font-size: 25rpx;
   color: white;
   line-height: 40rpx;
-  margin-top:20rpx; 
+  margin-top: 20rpx;
 }
-.hide{
- display: none;
-}
-.show{ 
- display: block;
 
+.hide {
+  display: none;
 }
-.box{
+
+.show {
+  display: block;
+}
+
+.box {
   margin: 15rpx 0;
   margin-right: 30rpx;
 }
-.list{
+
+.list {
   width: 100%;
   height: 180rpx;
   display: flex;
   justify-content: space-between;
 }
-.list-left{
+
+.list-left {
   display: flex;
   justify-content: row;
   width: 60%;
   height: 100%;
   margin-left: 30rpx;
-
 }
-.list-left-left{
+
+.list-left-left {
   width: 38rpx;
   height: 100%;
   margin: 0 5rpx;
 }
-.list-left-left image{
+
+.list-left-left image {
   width: 30rpx;
   height: 30rpx;
-  border-radius: 50%; 
+  border-radius: 50%;
   margin-top: 70rpx;
 }
-.list-left-center image{
+
+.list-left-center image {
   width: 150rpx;
-  height: 100%;
+  height: 85%;
 }
 
-.list-left-right text{
- display: block;
- margin-left: 25rpx;
- font-size: 37rpx;
- line-height: 180rpx;
+.list-left-right text {
+  display: block;
+  margin-left: 25rpx;
+  font-size: 33rpx;
+  line-height: 180rpx;
 }
-.right-text text{
+
+.right-text text {
   font-size: 22rpx;
   margin-top: 10rpx;
-   
 }
+
 .list-right {
   width: 20%;
   height: 100%;
   font-size: 38rpx;
-  margin-top: 55rpx;
+  margin-top: 65rpx;
   margin-right: 60rpx;
 }
-.list-right text{
-  margin-left: 30rpx;
+
+.list-right text {
+  margin-left: 28rpx;
 }
-.contair-fotter{
+
+.contair-fotter {
   width: 90%;
-  height:100%;
+  height: 100%;
   margin-top: 30rpx;
   padding: 0 5%;
 }
-.contair-fotter-top{
+
+.contair-fotter-top {
   width: 50%;
-  font-size: 35rpx;
-  /* float: right; */
+  font-size: 33rpx;
   display: flex;
   margin-left: 50%;
-  justify-content:space-between; 
+  justify-content: space-between;
 }
-.contair-fotter-fotter{
-  margin-top: 50rpx;
+
+.contair-fotter-fotter {
+  margin-top: 40rpx;
   display: flex;
-  justify-content:space-between; 
+  justify-content: space-between;
 }
-.contair-fotter-fotter-left navigator{
+
+.contair-fotter-fotter-left navigator {
   font-size: 28rpx;
   color: white;
-  background-color: #ff9933;
+  background-color: #f93;
   border-radius: 10rpx;
   padding: 8rpx 30rpx;
 }
-.contair-fotter-fotter-right{
-  font-size: 25rpx;
+
+.contair-fotter-fotter-right {
+  font-size: 33rpx;
   margin-top: 20rpx;
 }

@@ -1,6 +1,6 @@
 <!--pages/my/invoicemodify.wxml-->
 <view class="container">
-   <view class="line"></view>
+   <view class="lin"></view>
     <view class="detail">
         <form bindsubmit="formSubmit" bindreset="formReset">
             <view class="section">

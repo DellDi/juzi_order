@@ -6,44 +6,8 @@ Page({
     showView: true,
 
     item: [{
-        id: "0",
-        money: "30",
-        voucher: "满减券",
-        vouche: "代金券",
-        story: "",
-        usertime: "全天可用",
-        startdeta: "2018.07.25",
-        enddeta: " 2018.07.25",
-        use: "未使用",
-        not: "不计代金券",
-        notuse: "未使用"
+
       },
-      // {
-      //   id: "1",
-      //   money: "30",
-      //   voucher: "满减券",
-      //   vouche: "代金券",
-      //   story: "",
-      //   usertime: "全天可用",
-      //   startdeta: "2018.07.25",
-      //   enddeta: " 2018.07.25",
-      //   use: "未使用",
-      //   not: "不计代金券",
-      //   notuse: "未使用"
-      // },
-      // {
-      //   id: "2",
-      //   money: "300",
-      //   voucher: "满减券",
-      //   vouche: "代金券",
-      //   story: "",
-      //   usertime: "全天可用",
-      //   startdeta: "2018.07.25",
-      //   enddeta: " 2018.07.25",
-      //   use: "已使用",
-      //   not: "不计代金券",
-      //   notuse: "未使用"
-      // },
     ]
   },
   onLoad: function(options) {
@@ -74,15 +38,17 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Voucher/card_bag',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        openid: wx.getStorageSync('openid')
+        openid: getApp().globalData.openid
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res.data)
+        console.log(res)
         that.setData({
           card_bag: res.data
         })
@@ -93,7 +59,6 @@ Page({
     })
   },
   share: function (e) {
-    // console.log(e)
     wx.navigateTo({
       url: '../share/sharecar?id=' + e.currentTarget.dataset.id,
     })

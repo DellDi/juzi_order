@@ -1,71 +1,107 @@
 /* pages/queue/getcode.wxss */
-.container{
+
+.container {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   border-top: 4rpx solid #e3e3e3;
-} 
-.detail{
+}
+
+.detail {
   width: 88%;
   height: 100%;
   margin: 0 auto;
 }
-.section{
+
+.section {
   width: 100%;
-  height:100rpx;
+  height: 100rpx;
   display: flex;
   justify-content: row;
   font-size: 35rpx;
   line-height: 100rpx;
-  border-bottom: 2rpx solid #bfbfbf;
 }
-.section-left image{
-  width: 35rpx;
-  height:35rpx; 
-  margin-right: 15rpx;
-  margin-top: 32rpx;
+
+.section-left-left {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  font-size: 35rpx;
+  line-height: 100rpx;
 }
- input{
+
+.section-left-right {
   width: 100%;
   height: 100%;
-  font-size: 32rpx;
-  margin-left: 60rpx; 
+  display: flex;
+  background: #f5f5fa;
+  margin-top: 15rpx;
 }
-.section-right-left{
-  width:60%;
+
+.section-left-right image {
+  width: 29rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+  margin-top: 36rpx;
+  margin-left: 20rpx;
+}
+
+.section-left-left input {
+  width: 800rpx;
+  height: 79rpx;
+  font-size: 33rpx;
+  background: #f5f5fa;
+  padding: 1% 3% 1% 3%;
+  margin-top: 57rpx;
+}
+
+.section input {
+  width: 100%;
+  height: 100%;
+  font-size: 33rpx;
+  margin-left: 10rpx;
+}
+
+.section-right-left {
+  width: 60%;
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
-.section-right{
-  padding: 0 1%;
+
+.section-right {
+  padding: 0 2%;
   width: 100%;
   height: 100%;
   display: flex;
-
 }
-.one button{
-  font-size:28rpx;
+
+.one button {
+  font-size: 31rpx;
   color: white;
-  background-color: #ff9934;
-  width:200rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  margin-top: 20rpx;
-  margin-right: 30rpx;
+  background-color: #17c470;
+  width: 220rpx;
+  height: 87rpx;
+  line-height: 85rpx;
+  margin-top: 59rpx;
 }
 
 .fotter button {
-  margin-top: 50rpx;
+  margin-top: 110rpx;
   color: white;
   width: 100%;
-  height: 70rpx;
-  background-color:#ff9934; 
-  font-size: 33rpx;
-  margin-bottom:30rpx;
-  line-height: 70rpx; 
+  height: 83rpx;
+  background-color: #17c470;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+  line-height: 78rpx;
 }
-.check-box{
-  font-size: 33rpx;
+
+.check-box {
+  font-size: 35rpx;
+  color: #888;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }

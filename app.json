@@ -1,71 +1,76 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/home/search",
+    "pages/shop/shop",
+    "pages/home/Personal authorize",
+    "pages/share/sheardetails",
+    "pages/home/home", 
+    "pages/home/authorize",
+    "pages/my/invoice",  
+    "pages/my/mycar",
     "pages/menu/menu",
     "pages/menu/paymentmenu",
-    "pages/menu/completedmenu",
-    "pages/menu/confirmmenu",
-    "pages/menu/menualready",
-    "pages/menu/menudetail",
-    "pages/menu/voucher",
-
-    
-    "pages/my/invoicetop",
-    "pages/my/invoice",
-    "pages/my/invoicemodify",
-    "pages/my/invoiceinput",
-    "pages/my/user",
-    "pages/my/phone",
     "pages/my/myorder",
-    "pages/my/Membershipcard",
-    "pages/my/mycar",
-
-    
-    "pages/queue/queueres",
-    "pages/queue/getcode",
-    "pages/queue/queue",
     "pages/appointment/appointment",
     "pages/appointment/appointorder",
-    "pages/appointment/assignseat",
     "pages/appointment/appointdetail",
-    "pages/shop/storedetails",
+    "pages/my/invoicemodify",
+    "pages/my/invoiceinput",
+    "pages/my/invoicetop",
+    "pages/my/Membershipcard",
+    "pages/my/phone",
+    "pages/my/user",
+    "pages/queue/queue",
+    "pages/queue/getcode",
+    "pages/queue/queueres",    
+    "pages/share/sharecar",
     "pages/shop/switchcity",
     "pages/shop/voucher",
-    "pages/shop/shop",
+    "pages/scan_order/scan_order",
+    "pages/menu/voucher",
+    "pages/menu/menudetail",
+    "pages/menu/completedmenu",
+    "pages/menu/confirmmenu",
+    "pages/menu/paysuccess",
+    "pages/home/search",
+    "pages/shop/storedetails",
+    
     "pages/logs/logs",
     "pages/scan/scan",
-    "pages/scan/specialoffers",
-    "pages/share/sharecar",
-    "pages/share/sheardetails"
+    "pages/scan/specialoffers"
   ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于为您提供更好的服务"
+      }
+    },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "桔子点餐",
+    "navigationBarTitleText": "爱尚厨点餐",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#ddd",
-    "selectedColor": "green",
-    "borderStyle": "white",
-    "backgroundColor": "#FF9934",
+    "color": "#888",
+    "selectedColor": "#17c470",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "/img/home/home1.png",
-        "selectedIconPath": "/img/home/home1.png"
+        "selectedIconPath": "/img/home/home1.1.png"
       },
       {
-        "pagePath": "pages/scan/scan",
+        "pagePath": "pages/scan_order/scan_order",
+        "text": "菜单",
         "iconPath": "/img/home/home2.png",
-        "selectedIconPath": "/img/home/home2.png"
+        "selectedIconPath": "/img/home/home2.2.1.png"
       },
       {
         "pagePath": "pages/my/user",
         "text": "我的",
-        "iconPath": "/img/home/home3.png",
+        "iconPath": "/img/home/home3.1.png",
         "selectedIconPath": "/img/home/home3.png"
       }
     ]

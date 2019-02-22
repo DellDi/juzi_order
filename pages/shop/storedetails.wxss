@@ -1,92 +1,113 @@
 /* pages/shop/storedetails.wxss */
-.container{
-  width:100%;
+
+.container {
+  width: 100%;
   height: 100%;
   margin-bottom: 40rpx;
 }
+
 /**轮播图**/
-.my-swiper image{
+
+.my-swiper image {
   width: 100%;
   height: 350rpx;
 }
-.wrap{
-	display: inline-block;
-	margin-top: .8rem;
+
+.wrap {
+  display: inline-block;
+  margin-top: 0.8rem;
 }
-.wrap-item{
-	display: inline-block;
-	width: 33%;
-	height: 6rem;
-	line-height: 6rem;
-	border-bottom: 1px solid #ddd;
-	background-color: #fff;
-	text-align: center;
+
+.wrap-item {
+  display: inline-block;
+  width: 33%;
+  height: 6rem;
+  line-height: 6rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
 }
- /*不支持 :nth-child(2);*/
-.wrap-item.exp{
-	border: 1px solid #ddd;
-	border-top: 0;
+
+/*不支持 :nth-child(2);*/
+
+.wrap-item.exp {
+  border: 1px solid #ddd;
+  border-top: 0;
 }
+
 /**餐厅介绍**/
-.content{
+
+.content {
   width: 100%;
   height: 100%;
   background-color: #fff;
 }
-.content-detail{
- width:100%;
- height: 100%; 
- background-color: #fff;
- margin-bottom: 50rpx;  
+
+.content-detail {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 50rpx;
 }
-.content-detail-top{
+
+.content-detail-top {
   height: 93%;
   width: 94%;
-  padding:3.5% 3%;
-  background-color: #f7f7f7;
+  padding: 3.5% 3%;
 }
-.content-detail-top-text text{
-  font-size: 36rpx;
+
+.content-detail-top-text text {
+  font-size: 35rpx;
+  margin-left: 31rpx;
 }
+
 .content-detail-top-money {
-   font-size: 30rpx;
-   margin-top: 10rpx;
+  font-size: 33rpx;
+  margin-top: 20rpx;
 }
-.content-detail-top-money image{
+
+.content-detail-top-money image {
   width: 28rpx;
   height: 28rpx;
   margin-right: 20rpx;
   margin-top: 10rpx;
+  margin-left: 20rpx;
 }
-.content-detail-center{
-  padding: 15rpx 30rpx;
+
+.content-detail-center {
   background-color: #fff;
 }
-.list image{
+
+.list image {
   display: block;
   width: 25rpx;
   height: 25rpx;
   margin-right: 20rpx;
   margin-top: 15rpx;
 }
-.list{
+
+.list {
   display: flex;
   justify-content: column;
-  font-size: 30rpx;
+  font-size: 33rpx;
   font-weight: 500;
-  line-height: 55rpx;
+  line-height: 70rpx;
   margin-left: 50rpx;
 }
-.list:first-child{
-   margin-left: 5rpx;
+
+.list:first-child {
+  margin-left: 50rpx;
 }
-.world{
+
+.world {
+  width: 73%;
   font-size: 29rpx;
-  font-weight:500;
+  font-weight: 500;
 }
 
 /**拨打电话**/
-.content-detail-fotter{
+
+.content-detail-fotter {
   display: flex;
   justify-content: space-between;
   width: 85%;
@@ -94,29 +115,33 @@
   margin: 20rpx auto;
   background-color: #fff;
 }
-.content-detail-fotter-button{
+
+.content-detail-fotter-button {
   display: flex;
-  justify-content: column;
+  justify-content: center;
   width: 30%;
   height: 65rpx;
-  background-color: #ff9934;
+  background-color: #17c470;
   border-radius: 10rpx;
-  margin-top:15rpx;
+  margin-top: 15rpx;
   padding: 0 15rpx;
 }
-.content-detail-fotter-button navigator{
+
+.content-detail-fotter-button navigator {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: row;
 }
-.content-detail-fotter-button image{
+
+.content-detail-fotter-button image {
   width: 30rpx;
-  height:30rpx;
+  height: 30rpx;
   margin-top: 16rpx;
-  margin-right:15rpx; 
+  margin-right: 15rpx;
 }
-.adr{
+
+.adr {
   margin-top: 10rpx;
   font-size: 32rpx;
   color: #fff;
@@ -124,50 +149,64 @@
 
 /**优惠卷**/
 
-.coupon{
-  width:100%;
-  height: 100%; 
-}
-.coupon-top{
+.coupon {
   width: 100%;
-  height:85rpx;
+  height: 100%;
+}
+
+.coupon-top {
+  width: 100%;
+  height: 85rpx;
   display: flex;
   justify-content: space-between;
-  font-size: 36rpx;
+  font-size: 35rpx;
   margin-top: 25rpx;
   background-color: #f7f7f7;
 }
-.coupon-top text{
+
+.coupon-top text {
   font-size: 35rpx;
   line-height: 80rpx;
 }
-.coupon-top image{
-  width: 32rpx;
+
+.coupon-top image {
+  width: 29rpx;
   height: 29rpx;
   margin: 30rpx 20rpx 0 20rpx;
 }
-/**更多优惠卷**/
-.coupon-top-right view{ 
-  height: 100%;
-  background-color:#f7f7f7;
-  font-size: 30rpx;
-  line-height: 30rpx; 
-}
-.hide{
- display: none;
-}
-.hidden{
-   display: none;
-}
-.show{ 
- display: block;
+
+#img {
+  width: 15rpx;
+  height: 29rpx;
+  margin: 30rpx 20rpx 0 20rpx;
 }
 
-.box{
+/**更多优惠卷**/
+
+.coupon-top-right view {
+  height: 100%;
+  background-color: #f7f7f7;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.box {
   margin: 15rpx 0;
 }
 
-.coupon-center{
+.coupon-center {
   position: relative;
   width: 65%;
   height: 220rpx;
@@ -181,38 +220,47 @@
   justify-content: row;
   overflow: hidden;
 }
-.coupon-center-left{
-  width: 75%;
+
+.coupon-center-left {
+  width: 74%;
   height: 100%;
   display: flex;
   padding-right: 5rpx;
   justify-content: space-between;
   border-right: 3rpx dashed #f7f7f7;
 }
-.coupon-center-left-left{
+
+.coupon-center-left-left {
   width: 58%;
   height: 100%;
   line-height: 200rpx;
 }
-.money{
+
+.money {
   position: absolute;
-   font-size:100rpx;
-   font-weight: bold; 
-   bottom: 20rpx;
-   left: 30rpx;
+  font-size: 100rpx;
+  font-weight: bold;
+  bottom: 30rpx;
+  left: 35rpx;
 }
+
 .coupon-center-left-right {
   width: 42%;
   height: 100%;
-  padding-top: 20%;
+  padding-top: 14%;
   font-size: 35rpx;
   text-align: center;
-
 }
-.subtraction{
+
+.storeaddress {
+  width: 18%;
+}
+
+.subtraction {
   font-size: 25rpx;
 }
-.coupont-center-right{
+
+.coupont-center-right {
   width: 20%;
   height: 100%;
   position: relative;
@@ -221,54 +269,71 @@
   margin-top: 45rpx;
   text-align: center;
 }
-.right{
-   position: absolute;
+
+.right {
+  position: absolute;
   right: -10rpx;
   top: 15rpx;
   font-size: 35rpx;
 }
 
 /**预约 订餐，排队**/
-.content-detail-list{
+
+.content-detail-list {
   /* margin-top: 50rpx; */
-  width:100%;
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   background-color: #fff;
 }
-.detail-list{
-  padding: 15rpx 2%  5rpx 2%;
+
+.detail-list {
+  padding: 15rpx 2% 5rpx 2%;
   display: flex;
   justify-content: space-between;
-  font-size:32rpx;
+  font-size: 35rpx;
   border-top: 3rpx solid #f3f1f1;
 }
-.detail-list:last-child{
-  border-bottom:3rpx solid #f3f1f1;
+
+.detail-list1 {
+  padding: 15rpx 2% 5rpx 2%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 35rpx;
+  border-top: 25rpx solid #f3f1f1;
 }
-.detail-list-left{
+
+.detail-list:last-child {
+  border-bottom: 3rpx solid #f3f1f1;
+}
+
+.detail-list-left {
   margin-top: 15rpx;
   width: 120rpx;
-  height:58rpx;
+  height: 58rpx;
   line-height: 28rpx;
   display: flex;
   justify-content: row;
 }
-.detail-list-left image{
+
+.detail-list-left image {
   width: 27rpx;
   height: 30rpx;
   margin-right: 20rpx;
 }
-.detail-list-right image{
+
+.detail-list-right image {
   width: 12rpx;
   height: 23rpx;
   margin-left: 15rpx;
   margin-top: 12rpx;
 }
-.detail-list-right{
+
+.detail-list-right {
   font-size: 26rpx;
   margin-top: 8rpx;
   color: rgb(161, 160, 160);
 }
-.etail-list-right-text{
-   color: black;
+
+.etail-list-right-text {
+  color: black;
 }

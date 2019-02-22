@@ -57,7 +57,6 @@ Page({
     that.queue_lst();
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -68,15 +67,16 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Queue/queue_lst',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        shopid: wx.getStorageSync('shopid')
+        shopid: getApp().globalData.shopid
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        //  console.log(res)
         that.setData({
           queue_lst: res.data
         })
@@ -86,8 +86,6 @@ Page({
     })
   },
   takenum: function(e) {
-    console.log(e)
-
     wx.redirectTo({
       url: './getcode?type',
     })

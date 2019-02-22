@@ -8,13 +8,9 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.get_member_info();
-
-    getApp().getUserInfo(function(userInfo) {
-      that.setData({
-        nickname: app.globalData.userInfo.nickName
-      })
+    that.setData({
+      nickname: app.globalData.nickname
     })
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -68,13 +64,17 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Member/get_member_info',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        shopid: wx.getStorageSync('shopid'),
-        openid: wx.getStorageSync('openid')
+        shopid: getApp().globalData.shopid,
+        openid: getApp().globalData.openid
       },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
       header: {
-        'Accept': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function(res) {
         that.setData({

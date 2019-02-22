@@ -15,22 +15,19 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/detail',
-      method: 'GET',
+      // method: 'GET',
       data: {
         invoice: options.id
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res.data.invoice)
-
         that.setData({
           one_invoice: res.data.invoice
         })
-
-
-
       },
       fail: function(res) {},
       complete: function(res) {},
@@ -45,7 +42,7 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 生命周期函数--监听页面显示 
    */
   onShow: function() {
 
@@ -87,9 +84,8 @@ Page({
   },
 
   formSubmit: function(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-
     var that = this;
+    console.log(e)
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/modify',
       method: 'GET',
@@ -99,14 +95,16 @@ Page({
       header: {
         'Accept': 'application/json'
       },
+      // method: 'post',
+      // header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        console.log(res.data)
         if (res.data.result == 1) {
           wx.navigateBack({
             delta: 1
           })
           wx.redirectTo({
-            url: './invoicetop',
+            // url: './invoicetop',
+            url: './invoice',
           })
         } else {
           wx.showModal({
@@ -124,7 +122,6 @@ Page({
     })
   },
   formReset: function() {
-    console.log('form发生了reset事件')
   }
 
 

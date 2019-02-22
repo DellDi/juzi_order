@@ -4,7 +4,7 @@
   </view>
   <view class='user-item-bottom'>
     <view class='user-item-xin'>
-      <view class='user-item'>
+      <view class='user-item-first'>
         <image src='/img/my/member.4.png'></image>
         <text>名称</text>
       </view>
@@ -12,8 +12,8 @@
         <text>{{member_info.member_nickname}}</text>
       </view>
     </view>
-    <view class='user-item-xin'>
-      <view class='user-item'>
+    <view class='user-item-xin-shop'>
+      <view class='user-item-two'>
         <image src='/img/my/member.6.png'></image>
         <text>店铺</text>
       </view>
@@ -21,26 +21,8 @@
        <text>{{member_info.shop_name}}</text>
       </view>
     </view>
-    <!-- <view class='user-item-xin'>
-      <view class='user-item'>
-        <image src='/img/saoma.jpg'></image>
-        <text>状态</text>
-      </view>
-      <view url="/pages/address/address">
-         <text>{{member_info.member_status}}</text>
-      </view>
-    </view>
-    <view class='user-item-xin'>
-      <view class='user-item'>
-        <image src='/img/saoma.jpg'></image>
-        <text>信用</text>
-      </view>
-      <view url="/pages/address/address">   
-         <text>{{member_info.member_credit}}</text>
-      </view>
-    </view> -->
-    <view class='user-item-xin'>
-      <view class='user-item'>
+    <view class='user-item-xin-three'>
+      <view class='user-item-three'>
         <image src='/img/my/member.1.png'></image>
         <text>消费</text>
       </view>
@@ -53,27 +35,18 @@
         <image src='/img/my/member.5.png'></image>
         <text>手机号</text>
       </view>
-      <view url="/pages/address/address">
+      <view>
         <text>{{member_info.member_phone}}</text>
       </view>
     </view>
-     <view wx:else="" class='user-item-xin'>
-      <view class='user-item'>
+     <view class='user-item-xin-four'>
+      <view class='user-item-four'>
         <image src='/img/my/member.5.png'></image>
         <text>手机号</text>
       </view>
-      <navigator url="./bindmobile">
-        <text class="nobind">未绑定</text>
+      <navigator url="./phone">
+        <text class="nobind" style='font-size: 14px; font-family: PingFang SC;color: rgba(253, 47, 47, 1);'>未绑定</text>
       </navigator>
     </view>
-    <!-- <view class='user-item-xin'>
-      <view class='user-item'>
-        <image src='/img/saoma.jpg'></image>
-        <text>喜欢</text>
-      </view>
-      <view url="/pages/address/address">
-        <text>{{member_info.member_like}}</text>    
-      </view>
-    </view> -->
   </view>
 </view>

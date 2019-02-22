@@ -4,12 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: "南京红桔信息技术有限公司",
-    num: "465416313163145",
-    addess: "南京雨花台玉春一单元104室",
-    phone: "464616145366",
-    bank: "招商银行南京支行",
-    banknum: "454616313262"
+
   },
 
   // 修改企业信息
@@ -89,25 +84,23 @@ Page({
 
   },
   invoicetop: function(invoice_id) {
+    console.log(invoice_id)
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/detail',
-      method: 'GET',
+      //  method: 'GET',
       data: {
         invoice: invoice_id
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res.data.invoice)
-
         that.setData({
           one_invoice: res.data.invoice
         })
-
-
-
       },
       fail: function(res) {},
       complete: function(res) {},
@@ -117,15 +110,16 @@ Page({
     var that = this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Invoice/delete',
-      method: 'GET',
+      // method: 'GET',
       data: {
         invoice_id: e.currentTarget.dataset.id
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res.data.invoice)
         if (res.data.result == 1) {
           wx.navigateTo({
             url: './invoice'
@@ -145,7 +139,6 @@ Page({
     })
   },
   bingrequest: function(e) {
-    console.log(e)
     wx.navigateTo({
       url: './invoicemodify?id=' + e.currentTarget.dataset.id,
     })

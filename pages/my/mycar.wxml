@@ -1,30 +1,34 @@
 <!--index.wxml-->
-<view class="body">
-    <view class="line"></view>
 <!--头部 -->
      <view class="nav bc_white">
           <view class="{{selected?'red':'default'}}" bindtap="selected" >
-              <text style="background-image: url('/img/my/coupon.4.png');background-size:100% 100%;">代金劵</text>
-            </view>
+              <text>代金劵</text>
+            <image class='rselected' wx:if="{{selected}}" src='/img/my/myselected.png'></image>
+            
+          </view>
           <view class="{{selected1?'red':'default'}}" bindtap="selected1" >
-             <text style="background-image: url('/img/my/coupon.4.png');background-size:100% 100%;">满减劵</text>
+             <text>满减劵</text>
+             <image class='rselected' wx:if="{{selected1}}" src='/img/my/myselected.png'></image>
+             
            </view>
        </view>
+     <view class="line-top"></view>
   
      <!--代金券 -->
+     <view class='body'>
   <view class="{{selected?'show':'hidden'}}">
        <view class="detail" >
            <block wx:for="{{card_bag[0]}}" wx:key="" id="{{item.binding_id}}" >
                <view class="content {{item.isOverdue==1?'isOverdue':'notOverdue'}}" data-id="{{item.binding_id}}" bindtap="{{item.isOverdue==1?'':'share'}}"> 
                    <view class="content-center"  >
                        <view class="content-center-left">
+                          <view class='voucher_money'>
                            <text>¥</text>
                            <text class="money">{{item.voucher_money}}</text>
+                           </view>
+                            <view class='voucher_content'>{{item.voucher_account}}</view>
                        </view>
-                       <view class="content-center-right">
-                          <view class="content-center-right-list style">
-                               <text>代金券</text>
-                             </view>
+                       <view class="content-center-right" style="margin-top:80rpx;">
                              <view class="content-center-right-list">
                                  <text>桔子餐厅({{item.shop_name}})</text>
                                </view>
@@ -46,8 +50,7 @@
            <view class="detail-fotter">
                 <text>*可以将优惠券转赠给好友</text>
             </view>
-        </view>
-       
+        </view> 
      </view>
  <!--满减券 -->
      <view class="{{selected1?'show':'hidden'}}">
@@ -57,21 +60,23 @@
                bindtap="{{item.isOverdue==1?'':'share'}}" data-id="{{item.binding_id}}"> 
                    <view class="content-center"  bindtap='bind'>
                        <view class="content-center-left">
+                          <view class='voucher_money'>
                            <text>¥</text>
                            <text class="money">{{item.voucher_money}}</text>
-                           <text class="">满￥{{item.full_money}}可用</text>
+                           </view>
+                            <view class='voucher_content'>{{item.voucher_account}}</view>
                        </view>
                        <view class="content-center-right">
                           <view class="content-center-right-list style">
-                               <text>满减券</text>
+                              <text class="">满￥{{item.full_money}}可用</text>
+                            </view>
+                          <view class="content-center-right-list">
+                               <text>桔子餐厅（{{item.shop_name}})</text>
                              </view>
-                             <view class="content-center-right-list">
-                                 <text>桔子餐厅（{{item.shop_name}})</text>
-                               </view>
-                             <view class="content-center-right-list">
-                                <text wx:if="avaliable_day==1">全天可用</text>
-                                 <text wx:else></text>
-                               </view>
+                          <view class="content-center-right-list">
+                               <text wx:if="avaliable_day==1">全天可用</text>
+                               <text wx:else></text>
+                             </view>
                          </view>
                      </view>
                     <view class="content-fotter">
@@ -85,9 +90,9 @@
                <view class="detail-fotter">
                 <text>*可以将优惠券转赠给好友</text>
             </view>
-         </view>
-         
+         </view>    
     </view>
-</view>
+   </view>
+
 
 

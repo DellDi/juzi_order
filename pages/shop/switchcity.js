@@ -6,13 +6,12 @@ Page({
     searchLetter: [],
     showLetter: "",
     winHeight: 0,
-    // tHeight: 0,
-    // bHeight: 0,
+    city:'',
     cityList: [],
     isShowLetter: false,
     scrollTop: 0, //置顶高度
     scrollTopId: '', //置顶id
-    city: wx.getStorageSync('city'),
+   
     hotcityList: [{
       cityCode: 110000,
       city: '北京市'
@@ -70,9 +69,15 @@ Page({
       winHeight: winHeight,
       itemH: itemH,
       searchLetter: tempObj,
-      cityList: cityList
+      cityList: cityList,
+      city: app.globalData.city
     })
-
+   this.setarg()
+  },
+  setarg:function(){
+    this.setData({
+     city: wx.getStorageSync('city') || app.globalData.city
+    })
   },
   onReady: function() {
     // 生命周期函数--监听页面初次渲染完成
@@ -113,20 +118,7 @@ Page({
       })
     }, 1000)
   },
-  //选择城市
-  bindCity: function(e) {
-    console.log("bindCity")
-    this.setData({
-      city: e.currentTarget.dataset.city
-    })
-  },
-  //选择热门城市
-  bindHotCity: function(e) {
-    console.log("bindHotCity")
-    this.setData({
-      city: e.currentTarget.dataset.city
-    })
-  },
+ 
   //点击热门城市回到顶部
   hotCity: function() {
     this.setData({
@@ -135,10 +127,7 @@ Page({
   },
   switchCity: function(e) {
     // console.log(e)
-    this.setData({
-      city: e.currentTarget.dataset.city
-    })
-    var currpage = getCurrentPages();
+    wx.setStorageSync('city',e.currentTarget.dataset.city)
     var pages = getCurrentPages(); //获取页面栈
     var prevPage = pages[pages.length - 2]; //上一个页面（父页面）
     prevPage.setData({

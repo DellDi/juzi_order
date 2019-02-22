@@ -1,82 +1,88 @@
 /**index.wxss**/
-.container{
+
+.container {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-} 
-.line{
-  width: 100%;
-  height: 2rpx;
-  background-color:#e7e4e4; 
-  box-shadow:1rpx 1rpx 8rpx 1rpx #e0dfdf; 
-  margin-bottom: 8rpx;
 }
-.detail{
+
+.detail {
   width: 96%;
-  height: 100%;
-  margin: 0 auto;
+  height: 444px;
+  margin-left:2%;
 }
-.section{
+
+.section {
   width: 100%;
-  height:100%;
+  height: 100%;
   display: flex;
   justify-content: row;
+  border-bottom: 2rpx solid #bfbfbf;
+  padding-top: 40rpx;
+  margin-left: 5rpx;
 }
-.section-left image{
-  width: 24rpx;
-  height:32rpx; 
+
+.section-left image {
+  width: 35rpx;
+  height: 40rpx;
   margin-right: 10rpx;
   margin-top: 30rpx;
 }
-.one image{
-  width: 32rpx;
-  height:25rpx; 
+
+.one image {
+  width: 40rpx;
+  height: 35rpx;
   margin-right: 2rpx;
   margin-top: 30rpx;
 }
-.section-right{
+
+.section-right {
   padding: 0 1%;
   width: 98%;
   height: 100%;
-   display: flex;
-   color:#ddd;
-   justify-content: row;
-   line-height: 90rpx;
-   border-bottom: 2rpx solid #bfbfbf;
+  display: flex;
+  color: rgb(37, 37, 37);
+  justify-content: row;
+  line-height: 103rpx;
+}
 
-}
-.section-right-left{
+.section-right-left {
   width: 25%;
-  height:100%;
-   font-size: 31rpx;
-   font-weight: bold;
+  height: 100%;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: -30rpx;
 }
-.section-right-right{
+
+.section-right-right {
   width: 75%;
-  height:100%;
+  height: 100%;
 }
-.section-right-right input{
+
+.section-right-right input {
   width: 100%;
   height: 100%;
-  font-size: 29rpx;
+  font-size: 31rpx;
   text-align: right;
   margin-top: 20rpx;
 }
-.fotter{
+
+.fotter {
   width: 86%;
   height: 100%;
-  font-size: 25rpx;
+  font-size: 31rpx;
   color: #b9b8b8;
   margin: 25rpx 7%;
   font-weight: bold;
 }
-.fotter button{
+
+.fotter button {
   margin-top: 80rpx;
   width: 400rpx;
   height: 100%;
-  background-color: #ff9933;
-  font-size: 30rpx;
+  background-color: #17c470;
+  font-size: 35rpx;
   color: white;
-   box-shadow:1rpx 1rpx 15rpx 1rpx #b4b2b2; 
+  box-shadow: 1rpx 1rpx 15rpx 1rpx #b4b2b2;
 }

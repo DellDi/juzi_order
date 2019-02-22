@@ -11,8 +11,8 @@ Page({
     disabled: false, //按钮是否禁用
     phone: '', //获取到的手机栏中的值
     checkcode: null,
-    check: ''
-
+    check: '',
+    _access_token: '',
   },
 
   //获取手机栏input中的值
@@ -86,16 +86,18 @@ Page({
     }
     wx: wx.request({
       url: getApp().globalData.domain + 'Queue/get_mobile_code',
-      method: 'GET',
+      // method: 'GET',
       data: {
         mobile: phone
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        console.log(res)
-        wx.setStorageSync('code', res.data.code);
+        // wx.setStorageSync('code', res.data.code);
+        getApp().globalData.code = res.data.code
         // that.setData({
         //   queue_lst: res.data
         // })
@@ -111,6 +113,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
+    that.get_access_token();
     that.setData({
       id: options.id,
       type: options.type
@@ -124,26 +127,43 @@ Page({
     } else {
       this.data.check = 1
     }
-    // console.log(e.detail.value);
-    // console.log(check);
   },
   checkcode: function(e) {
     var that = this;
-    console.log(e.detail.value)
-    console.log(wx.getStorageSync('code'))
-    if (e.detail.value !== wx.getStorageSync('code')) {
-
+    if (e.detail.value !== getApp().globalData.code) {
       that.data.checkcode = 0;
-      console.log(that)
     } else {
       that.data.checkcode = 1;
     }
   },
+  get_access_token: function () {
+    var that = this;
+    wx.request({
+      url: "https://diancan.zhonghaokeji.net/index.php/api/Getopenid/get1",
+      data: {
+
+      },
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          _access_token: res.data.access_token//将_access_token存起来
+
+        })
+      }
+    })
+  },  
+  // 排队
   formSubmit: function(e) {
     var that = this;
-    console.log(that)
+    if (!e.detail.value.mobile){
+      wx.showToast({
+        title: '验证码不能为空',
+        icon: '',
+        image: '',
+      })
+      return false;
+    }
     if (that.data.checkcode == 0) {
-      // console.log(that.data)
       wx.showToast({
         title: '验证码不正确',
         icon: 'none',
@@ -155,25 +175,53 @@ Page({
   },
   //立即排队
   imm_lineup: function(e) {
-    // console.log(e)
-    console.log(this.data.check)
+    var that=this;
     wx: wx.request({
       url: getApp().globalData.domain + 'Queue/queue_code',
-      method: 'GET',
+      // method: 'GET',
       data: {
-        shopid: wx.getStorageSync('shopid'),
-        openid: wx.getStorageSync('openid'),
-        'mobile': e.detail.value.mobile,
-        'table_type_id': e.detail.value.table_type_id,
+        shopid: getApp().globalData.shopid,
+        openid: getApp().globalData.openid,
+        mobile: e.detail.value.mobile,
+        table_type_id: e.detail.value.table_type_id,
         is_send: this.data.check
       },
-      header: {
-        'Accept': 'application/json'
-      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function(res) {
-        // console.log(res)
+        console.log(that.data._access_token)
+        var data = {};
         if (res.data.queue_status == 1) {
-          wx.navigateTo({
+          //发送模板消息
+          wx: wx.request({
+            url: 'https://diancan.zhonghaokeji.net/index.php/api/Getopenid/send4',
+            data: {
+              access_token: that.data._access_token,
+              template_id: 'cxsrvGIRBmLCUiQVwKF5R1kbWsv58Ps4jQMsioFLG0U',
+              form_id: e.detail.formId,
+              _access_token: that.data._access_token,
+              openid: getApp().globalData.openid,
+                "keyword1": res.data.arr.shop_name, 
+                "keyword2":res.data.arr.table_type, 
+                "keyword3": res.data.arr.count,
+                "keyword4": res.data.arr.queue_no
+             
+            },
+            method: 'post',
+            // header: { "Content-Type": "application/json" },
+            header: { "Content-Type": "application/x-www-form-urlencoded" },
+            dataType: 'json',
+            responseType: 'text',
+            success: function (res) {
+              console.log(res)
+            },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+          wx.reLaunch({
             url: './queueres?num=' + res.data.arr.count + '&queue_no=' + res.data.arr.queue_no +
               '&table_type=' + res.data.arr.table_type + '&queue_id=' + res.data.arr.queue_id,
           })
@@ -184,10 +232,6 @@ Page({
             duration: 1500
           })
         }
-        //  console.log(res)
-        // that.setData({
-        //   queue_lst: res.data
-        // })
       },
       fail: function(res) {},
       complete: function(res) {},

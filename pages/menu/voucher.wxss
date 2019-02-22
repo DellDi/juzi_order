@@ -1,91 +1,129 @@
 /* pages/menu/voucher.wxss */
+
 page {
-  background-color: #f0f0f0;
-
+  background-color: #f5f2f0;
+  color: #888;
+  padding-top: 40rpx;
 }
 
-.detail{
-   width: 80%;
-   height:90%;
-   margin: 0;
-   padding: 5% 10%;
-   position: relative;
+.detail-two, .detail-first, .detail {
+  width: 80%;
+  height: 95%;
+  margin: 0;
+  padding: 5% 10% 0 10%;
+  position: relative;
 }
-.line{
-  width: 100%;
-  height: 4rpx;
-  background-color:#e7e4e4; 
-  box-shadow:1rpx 1rpx 10rpx 1rpx #e0dfdf; 
-  margin-bottom: 8rpx;
-}
+
 /* 优惠券 */
-.content{
-  border-radius:25rpx;
+
+.content {
+  border-radius: 25rpx;
   width: 100%;
   height: 260rpx;
-  margin-bottom: 55rpx; 
+  margin-bottom: 55rpx;
 }
-.content-center{
+
+.content-center {
   display: flex;
   justify-content: row;
   position: relative;
   width: 100%;
   height: 200rpx;
-   /* opacity:0.7; */
 }
 
-.content-center image{
+.detail-top {
+  width: 100%;
+  height: 80rpx;
+  padding-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-top text {
+  font-size: 28rpx;
+  color: #ccc;
+}
+
+.line {
+  width: 36%;
+  height: 1px;
+  background-color: #e7e4e4;
+  margin-top: 30rpx;
+}
+
+.content-center image {
   position: absolute;
   width: 130rpx;
   height: 130rpx;
   border-radius: 50%;
   top: 40rpx;
   right: 80rpx;
-
 }
-.content-center-left{
-  margin-left: 240rpx;
+
+.content-center-left {
+  margin-left: 100rpx;
   width: 160rpx;
   height: 100%;
   font-size: 45rpx;
   line-height: 250rpx;
   color: white;
-
+  margin-right: 120rpx;
 }
-.content-center-right{
-  margin-top: 65rpx; 
+
+.content-center-right {
+  margin-top: 65rpx;
   text-align: center;
   font-weight: bold;
- } 
-.money{
+}
+
+.money {
   font-size: 80rpx;
 }
-.content-center-right-list{
+
+.content-center-right-list {
   width: 200rpx;
   height: 35rpx;
   margin-top: 50rpx;
-  position: absolute; 
+  position: absolute;
   font-size: 23rpx;
-  color: #308cab;
-  margin-left: -10rpx;
+  margin-left: -40rpx;
 }
-.style{
-    font-size: 33rpx;
-   margin-top: -30rpx;
-   position: absolute;
+
+.style {
+  font-size: 33rpx;
+  margin-top: -10rpx;
+  position: absolute;
 }
-.hidden{
-  display:none;
+
+.hidden {
+  display: none;
 }
+
 .content-fotter {
   width: 90%;
   height: 60rpx;
-  padding: 0  4.5% 0 5.5%;
+  padding: 0 4.5% 0 5.5%;
   font-size: 23rpx;
   line-height: 58rpx;
   margin-bottom: 20rpx;
 }
-.use{
+
+.use {
   font-size: 25rpx;
   margin-left: 90rpx;
+}
+
+.container {
+  width: 100%;
+  border: none;
+}
+
+.bottom {
+  text-align: center;
+  font-size: 29rpx;
+  color: #ccc;
+  width: 100%;
+  height: 40rpx;
+  bottom: 20rpx;
+  position: fixed;
 }

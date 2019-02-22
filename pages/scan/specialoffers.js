@@ -42,9 +42,29 @@ Page({
         }
       })
     }
+
+    var that = this;
+    wx: wx.request({
+      url: getApp().globalData.domain + 'Queue/queue_lst',
+      // method: 'GET',
+      data: {
+        shopid: getApp().globalData.shopid
+      },
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      success: function (res) {
+        that.setData({
+          queue_lst: res.data
+        })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

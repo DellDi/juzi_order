@@ -1,32 +1,30 @@
-
 <view class="container">
-      <!--优惠卷-->
-             <view class="box">
-                  <view  data-id="{{voucher.voucher_id}}" class="coupon-center " style="background-image: url('http://fzb8bu.natappfree.cc/orange/public/img/my/coupon.1.1.jpg');">
-                      <view class="coupon-center-left">
-                         <view class="coupon-center-left-left">
-                             <text>¥ </text>
-                             <text class="money">{{voucher.voucher_money}}</text>
-        <!-- <text class="{{item.full_money==null?'hidden':''}}">（满￥{{item.full_money}}可用)</text> -->
-                             
-                           </view>
-                         <view  class="coupon-center-left-right">
-                            <!-- <view >满减券</view>   -->
-                            <view wx:if="{{voucher.favor_type==1}}">代金券</view>
-                            <view wx:else>满减券</view>                        
-                            <view class="world">桔子餐厅({{voucher.shop_name}})</view>
-                            <!-- <view class="subtraction">满{{voucher.full_money}}使用</view> -->
-                               <text wx:if="{{avaliable_day}}==1">全天可用</text>
-                                 <text wx:else></text>
-                           </view>
-                         </view> 
-                      <view  class="coupont-center-right" bindtap="share_receive" 
-                           data-id="{{voucher.voucher_id}}" >
-                         <view>点击</view>
-                         <view>领取</view>
-                         <view class="right">></view>
-                       </view>
-                     </view>
-               </view>
-               <view class="text">*请点击领取优惠券</view>
-     </view>
+  <!--优惠卷-->
+  <view class="box">
+    <view data-id="{{voucher.voucher_id}}" class="coupon-center " style="background-image: url('https://diancan.zhonghaokeji.net/img/my/coupon.2.jpg');">
+      <view class="coupon-center-left">
+        <view class="coupon-center-left-left">
+          <text>¥ </text>
+          <text class="money">{{voucher.voucher_money}}</text>
+        </view>
+        <view class="coupon-center-left-right">
+          <view wx:if="{{voucher.favor_type==1}}">代金券</view>
+          <view wx:else>满减券</view>
+          <view class="world">桔子餐厅({{voucher.shop_name}})</view>
+          <text wx:if="{{voucher.avaliable_day}}==1">全天可用</text>
+          <text wx:else></text>
+        </view>
+        <view class="world">
+          <text wx:if="{{voucher.favor_type==2}}">（满￥{{voucher.full_money}}可用)</text>
+          <text wx:else ></text>
+        </view>
+      </view>
+      <view class="coupont-center-right" bindtap="share_receive" data-id="{{voucher.binding_id}}">
+        <view>点击</view>
+        <view>领取</view>
+        <view class="right">></view>
+      </view>
+    </view>
+  </view>
+  <view class="text">*请点击领取优惠券</view>
+</view>

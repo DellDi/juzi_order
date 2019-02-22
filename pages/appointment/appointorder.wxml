@@ -1,13 +1,11 @@
 <!--pages/appointment/appointorder.wxml-->
 <!--index.wxml-->
-<view class="container">
-  <view class="line"></view>
+<view class="containe">
   <view class="detail">
     <view class="caipin-left">
       <image src="/img/my/pointmenu.1.png"></image>
       <view>预约订单</view>
     </view>
-    <view class="line"></view>
     <block wx:for="{{appoint}}" data-id="{{item.id}}">
       <view class="ing">
         <view class="contair-detail-list">
@@ -31,12 +29,14 @@
         <view class="contair-detail-list">
           <text>预约人：{{item.user_name}}</text>
         </view>
-        <view class="caipin-right">
-          <button bindtap="cancel" data-appointid="{{item.id}}">取消订单</button>
-          <button bindtap="order">立即点餐</button>
-        </view>
+        <form bindsubmit="formSubmit"  report-submit="ture" bindreset="formReset">
+         <view class="caipin-right">
+            <button formType="submit" data-appointid="{{item.id}}">取消订单</button>
+           <button bindtap="menu" data-tableno="{{item.table_num}}" data-shopid="{{item.shop_id}}" >立即点餐</button> 
+          </view>
+          </form>
       </view>
       <view class="line"></view>
     </block>
   </view>
-</view>
+</view> 

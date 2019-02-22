@@ -1,0 +1,3 @@
+<!--pages/home/home/searc.wxml-->
+    <myOpenSetting show="{{get_userinfo}}"  bind_getUserInfo="getUserInfo" type="getUserInfo" click_again="{{click_again}}" bindtap='cc'/>
+

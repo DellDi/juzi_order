@@ -14,7 +14,7 @@ Page({
     isgq: 1,
   },
   onLoad: function(options) {
-// console.log(options)
+console.log(options)
     var that = this;
     wx.showShareMenu({
       // 要求小程序返回分享目标信息
@@ -22,19 +22,19 @@ Page({
     });
     // console.log(options);
     wx: wx.request({
-      url: getApp().globalData.domain + '/voucher/get_one_voucher',
+      url: getApp().globalData.domain + 'voucher/get_one_voucher',
       data: {
         voucher_id: options.id
       },
-      // header: {},
-      method: 'GET',
-      header: {
-        'Accept': 'application/json'
-      },
+      // method: 'GET',
+      // header: {
+      //   'Accept': 'application/json'
+      // },
+      method: 'post',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       dataType: 'json',
-      // responseType: 'text',
       success: function(res) {
-        // console.log(res)
+        console.log(res)
         that.setData({
           voucher: res.data
         })
@@ -59,20 +59,6 @@ Page({
       imageUrl: '/img/my/coupon.1.1.jpg',
       path: 'pages/share/sheardetails?id=' + ops.target.dataset.id,
       success: function(res) {
-        // // 转发成功
-        // console.log(res)
-        // // console.log("转发成功:" + JSON.stringify(res));
-        // var shareTickets = res.shareTickets;
-        // if (shareTickets.length == 0) {
-        //   return false;
-        // }
-        // //可以获取群组信息
-        // wx.getShareInfo({
-        //   shareTicket: shareTickets[0],
-        //   success: function (res) {
-        //     // console.log(res)
-        //   }
-        // })
         wx.showShareMenu({
           // 要求小程序返回分享目标信息
           withShareTicket: true
